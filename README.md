@@ -5,7 +5,7 @@ Project for CSC 3380
 
 These instructions will provide the necessary guidance on how to install the following software to work on your projects. 
 
-###### Note: The way both Angular and Node.js are installed might end up being different depending on the OS the programmer is using. 
+###### Note: The way both React and Node.js are installed might end up being different depending on the OS the programmer is using. 
 
 ## Prerequisites 
 

@@ -41,6 +41,6 @@ npm -v
 ###### Note: Before you download this, you will need to make that you have git installed by typing *git --version* in your terminal/console.
 
 ```
-git clone https://github.com/wate123/BodyShape/
+git clone https://github.com/MilsonCodes/CSC3380_Project.git
 ```
 ###### Note: Mac uses / and Windows uses \ when accessing directories through the terminal/console

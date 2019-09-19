@@ -32,7 +32,7 @@ node --version
 The npm package manager is needed in order to download and install npm packages, which you can learn more about [here](https://docs.npmjs.com/about-npm/index.html). It should be included with the installation of node.  
 * To make sure that you have a npm client installed on your computer, type the following command in your terminal/console window.
 ```
-npm -v
+npm -v (or --version)
 ```
 #### Cloning/Downloading a Repository
 * Be sure to download and install git [here](https://git-scm.com/downloads).

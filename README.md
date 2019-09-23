@@ -44,3 +44,43 @@ npm -v
 git clone https://github.com/MilsonCodes/CSC3380_Project.git
 ```
 ###### Note: Mac uses / and Windows uses \ when accessing directories through the terminal/console
+
+After cloning the git repo, navigate to the project directory and run the node installation command.
+```
+cd folder-name
+```
+```
+npm i 
+```
+or
+```
+npm install
+```
+
+
+###### Git commands
+To pull the most recent changes for a branch:
+```
+git pull origin branch-name
+```
+To create a new branch:
+```
+git checkout -b branch-name
+```
+To switch to a different branch:
+```
+git checkout branch-name
+```
+To push your changes you will need to use three seperate commands
+(1) to add your changes to git's system
+```
+git add .
+```
+(2) to commit your changes to the repo with a message
+```
+git commit -m "message about commit"
+```
+(3) send changes to server (able to be pulled by others)
+```
+git push origin branch-name
+```

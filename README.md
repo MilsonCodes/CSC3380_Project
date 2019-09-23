@@ -73,15 +73,15 @@ To switch to a different branch:
 git checkout branch-name
 ```
 To push your changes you will need to use three seperate commands
-  (1) to add your changes to git's system
+* (1) to add your changes to git's system
 ```
 git add .
 ```
-  (2) to commit your changes to the repo with a message
+* (2) to commit your changes to the repo with a message
 ```
 git commit -m "message about commit"
 ```
-  (3) send changes to server (able to be pulled by others)
+* (3) send changes to server (able to be pulled by others)
 ```
 git push origin branch-name
 ```

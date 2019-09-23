@@ -57,6 +57,12 @@ or
 npm install
 ```
 
+Next, you will want to see the site as you are working on it. To do this, navigate to the src folder and run the developement command
+```
+cd src/
+npm run dev
+```
+Now you can navigate to http://localhost:3000/ to see the website. This will update automatically when you save changes to a file.
 
 ## Git commands
 #### IMPORTANT: Make sure to work from a seperate branch, NEVER commit directly to Master.

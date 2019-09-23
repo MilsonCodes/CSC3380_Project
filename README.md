@@ -134,7 +134,7 @@ const CompName = (parameters) => {                   // component names and prop
 As opposed to CSS, we will use the styled-components library to include CSS directly into our JavaScript files
 ```
 const Container = styled.div`                       // can use this syntax to restyle HTML elements, then can call <Container/> in React components
-  color: black;
+  color: black;                                     // these are normal CSS properties and follow CSS syntax
   width: 100%;
   height: 100vh;
 `

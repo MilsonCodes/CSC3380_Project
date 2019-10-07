@@ -3,12 +3,13 @@ import styled, { ThemeProvider } from "styled-components";
 import THEME from "../../assests/constants";
 import { lighten } from "polished";
 import logo from "../../assests/AGIT_thumbnail.png";
+import Link from "next/link";
 
 const Background = styled.div`
   background-image: linear-gradient(
     to bottom,
-    ${props => lighten(0.15, props.theme.background)},
-    ${props => lighten(0.3, props.theme.background)}
+    ${props => lighten(0.15, props.theme.secondary)},
+    ${props => lighten(0.4, props.theme.secondary)}
   );
   position: absolute;
   top: 0;
@@ -28,6 +29,7 @@ const Header = styled.span`
   margin: auto;
 `;
 
+// Used to scale to mobile
 const Image = styled.img`
   @media (max-width: 900px) {
     width: 30%;
@@ -53,7 +55,9 @@ const Layout = props => {
       <ThemeProvider theme={THEME}>
         <Background className='Content'>
           <Header>
-            <Image src={logo}></Image>
+            <Link href='/'>
+              <Image src={logo}></Image>
+            </Link>
           </Header>
           {props.children}
         </Background>

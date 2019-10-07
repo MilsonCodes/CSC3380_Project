@@ -3,8 +3,10 @@ import LinkComp from "../components/Link/index.js";
 import styled from "styled-components";
 import { transparentize } from "polished";
 
-const Welcome = styled.h3`
+const Welcome = styled.h2`
   color: ${p => p.theme.text | "black"};
+  padding: auto;
+  margin: auto;
 `;
 
 const Descr = styled.p`
@@ -18,14 +20,15 @@ const Container = styled.div`
     text-align: center;
   }
   padding: 20px 20px;
-  h3 {
-    text-align: center;
+  h2 {
+    padding: 20px 0 10px 10%;
   }
   background-color: ${offWhite};
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
   border: none;
   border-radius: 50px;
   transition: all ease-in-out 1s;
+  height: 70%;
 `;
 
 const Divider = styled.div`
@@ -33,6 +36,8 @@ const Divider = styled.div`
   align-items: center;
   display: flex;
   flex-wrap: wrap;
+  position: relative;
+  top: 30%;
 `;
 
 const Break = styled.div`
@@ -47,7 +52,10 @@ const Description = () => {
   return (
     <Descr>
       We are dedicated to connecting customers to businesses that offer
-      specials. <br></br>100% free, 100% accessible, 100% special.
+      discounts and deals on a monthly, weekly, or daily basis.
+      <br></br>
+      <br></br>
+      100% free, 100% accessible, 100% special.
     </Descr>
   );
 };

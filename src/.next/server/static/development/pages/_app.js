@@ -172,7 +172,7 @@ const Layout = props => {
       lineNumber: 25
     },
     __self: undefined
-  }, "Agit")), __jsx(styled_components__WEBPACK_IMPORTED_MODULE_2__["ThemeProvider"], {
+  }, "Agit - Eat Special")), __jsx(styled_components__WEBPACK_IMPORTED_MODULE_2__["ThemeProvider"], {
     theme: _assests_constants__WEBPACK_IMPORTED_MODULE_3__["default"],
     __source: {
       fileName: _jsxFileName,

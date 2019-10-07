@@ -93,58 +93,6 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./components/Button/index.js":
-/*!************************************!*\
-  !*** ./components/Button/index.js ***!
-  \************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
-
-var _jsxFileName = "/home/m/CSC3380_Project/src/components/Button/index.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
-
-const StyledButton = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.button`
-  border-radius: 50px;
-  border: ${props => "solid 2px " + props.theme.secondary};
-  background: ${props => props.theme.button};
-  color: ${props => props.theme.text | "black"};
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
-  height: ${props => props.height ? props.height : "auto"};
-  width: ${props => props.size === "small" ? props.height ? props.height : "45px" : props.size === "medium" ? "100px" : props.size === "large" ? "200px" : "15%"};
-  outline: none;
-  transition: all ease 0.25s;
-  cursor: pointer;
-  margin: 10px;
-  display: ${props => props.icon && !props.label ? "flex" : "block"};
-  font-size: ${p => p.icon && !p.label ? "35px" : "15px"};
-  :hover {
-    background: ${props => props.theme.secondary};
-  border: solid 3px ${p => p.theme.button};
-`;
-
-const Button = props => {
-  return __jsx(StyledButton, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 33
-    },
-    __self: undefined
-  }), props.children);
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Button);
-
-/***/ }),
-
 /***/ "./components/Link/index.js":
 /*!**********************************!*\
   !*** ./components/Link/index.js ***!
@@ -160,31 +108,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! polished */ "polished");
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(polished__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/home/m/CSC3380_Project/src/components/Link/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-const LinkWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.span`
-	text-decoration: underline;
-	:hover {			
-		color: gray;
-		cursor: pointer;
-	}
+
+const LinkWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
+  overflow: hidden;
+  text-decoration: underline;
+  color: ${p => p.color ? Object(polished__WEBPACK_IMPORTED_MODULE_3__["darken"])(0.1, p.color) : Object(polished__WEBPACK_IMPORTED_MODULE_3__["darken"])(0.1, p.theme.secondary)};
+  :hover {
+    color: ${p => p.color ? Object(polished__WEBPACK_IMPORTED_MODULE_3__["darken"])(0.3, p.color) : Object(polished__WEBPACK_IMPORTED_MODULE_3__["darken"])(0.3, p.theme.secondary)};
+    cursor: pointer;
+  }
 `;
 
 const LinkComp = props => {
   return __jsx(LinkWrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 19
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: props.to,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 20
     },
     __self: undefined
   }, props.children));
@@ -268,39 +221,6 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/keys */ "core
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/promise */ "core-js/library/fn/promise");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js ***!
-  \********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _extends; });
-/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
-/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
-
-function _extends() {
-  _extends = _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default.a || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
 
 /***/ }),
 
@@ -1935,64 +1855,106 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Link_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Link/index.js */ "./components/Link/index.js");
-/* harmony import */ var _components_Button_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Button/index */ "./components/Button/index.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/home/m/CSC3380_Project/src/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+ // import Button from "../components/Button/index";
+// import Router from "next/router";
 
 
+const Welcome = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.h2`
+  color: ${p => p.theme.text | "black"};
+`;
+const Descr = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.p`
+  color: ${p => p.theme.text | "#616161"};
+`;
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.span`
+  text-align: center;
+`;
+const Divider = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
+  margin: 0 auto;
+`;
 
+const Message = () => {
+  return __jsx(Welcome, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: undefined
+  }, "Welcome to Agit!");
+};
+
+const Description = () => {
+  return __jsx(Descr, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: undefined
+  }, "We are dedicated to connecting customers to businesses that offer specials. ", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: undefined
+  }), "100% free, 100% accessible, 100% special.");
+};
 
 const Index = () => {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
+  return __jsx(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 37
     },
     __self: undefined
-  }, __jsx("h2", {
+  }, __jsx(Message, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 38
     },
     __self: undefined
-  }, "Index Page"), __jsx("h2", {
+  }), __jsx(Description, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 39
     },
     __self: undefined
-  }, "Welcome"), __jsx(_components_Button_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    onClick: () => next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push("/login"),
+  }), __jsx(Divider, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 40
     },
     __self: undefined
-  }, "Login to save favorites"), __jsx(_components_Button_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    height: "50px",
-    onClick: () => next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push("/home"),
+  }, __jsx(_components_Link_index_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    to: "/login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: undefined
-  }, "Browse without logging in"), __jsx(_components_Link_index_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    to: "/home",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 41
     },
     __self: undefined
   }, __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 42
     },
     __self: undefined
-  }, "Home")));
+  }, "Login to save favorites")), __jsx(_components_Link_index_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    to: "/home",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44
+    },
+    __self: undefined
+  }, __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45
+    },
+    __self: undefined
+  }, "Browse without logging in"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
@@ -2088,14 +2050,14 @@ module.exports = require("core-js/library/fn/promise");
 
 /***/ }),
 
-/***/ "next/router":
-/*!******************************!*\
-  !*** external "next/router" ***!
-  \******************************/
+/***/ "polished":
+/*!***************************!*\
+  !*** external "polished" ***!
+  \***************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("next/router");
+module.exports = require("polished");
 
 /***/ }),
 

@@ -81,7 +81,7 @@ var Layout = function Layout(props) {
       lineNumber: 25
     },
     __self: this
-  }, "Agit")), __jsx(styled_components__WEBPACK_IMPORTED_MODULE_3__["ThemeProvider"], {
+  }, "Agit - Eat Special")), __jsx(styled_components__WEBPACK_IMPORTED_MODULE_3__["ThemeProvider"], {
     theme: _assests_constants__WEBPACK_IMPORTED_MODULE_4__["default"],
     __source: {
       fileName: _jsxFileName,

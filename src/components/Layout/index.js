@@ -22,7 +22,7 @@ const Layout = props => {
   return (
     <div className='Layout'>
       <Head>
-        <title>Agit</title>
+        <title>Agit - Eat Special</title>
       </Head>
       <ThemeProvider theme={THEME}>
         <Background className='Content'>{props.children}</Background>

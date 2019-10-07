@@ -108,31 +108,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! polished */ "polished");
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(polished__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/home/m/CSC3380_Project/src/components/Link/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-const LinkWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.span`
-	text-decoration: underline;
-	:hover {			
-		color: gray;
-		cursor: pointer;
-	}
+
+const LinkWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
+  overflow: hidden;
+  text-decoration: underline;
+  color: ${p => p.color ? Object(polished__WEBPACK_IMPORTED_MODULE_3__["darken"])(0.1, p.color) : Object(polished__WEBPACK_IMPORTED_MODULE_3__["darken"])(0.1, p.theme.secondary)};
+  :hover {
+    color: ${p => p.color ? Object(polished__WEBPACK_IMPORTED_MODULE_3__["darken"])(0.3, p.color) : Object(polished__WEBPACK_IMPORTED_MODULE_3__["darken"])(0.3, p.theme.secondary)};
+    cursor: pointer;
+  }
 `;
 
 const LinkComp = props => {
   return __jsx(LinkWrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 19
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: props.to,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 20
     },
     __self: undefined
   }, props.children));
@@ -1850,38 +1855,131 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Link_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Link/index.js */ "./components/Link/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! polished */ "polished");
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(polished__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/home/m/CSC3380_Project/src/pages/index.js";
-
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
+
+
+const Welcome = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.h3`
+  color: ${p => p.theme.text | "black"};
+`;
+const Descr = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.p`
+  color: ${p => p.theme.text | "#616161"};
+`;
+let offWhite = Object(polished__WEBPACK_IMPORTED_MODULE_3__["transparentize"])(0.2, "white");
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
+  p {
+    text-align: center;
+  }
+  padding: 20px 20px;
+  h3 {
+    text-align: center;
+  }
+  background-color: ${offWhite};
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+  border: none;
+  border-radius: 50px;
+  transition: all ease-in-out 1s;
+`;
+const Divider = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+`;
+const Break = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
+  width: 100%;
+`;
+
+const Message = () => {
+  return __jsx(Welcome, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    },
+    __self: undefined
+  }, "Welcome to Agit!");
+};
+
+const Description = () => {
+  return __jsx(Descr, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48
+    },
+    __self: undefined
+  }, "We are dedicated to connecting customers to businesses that offer specials. ", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: undefined
+  }), "100% free, 100% accessible, 100% special.");
+};
+
 const Index = () => {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
+  return __jsx(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 57
     },
     __self: undefined
-  }, __jsx("h2", {
+  }, __jsx(Message, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 58
     },
     __self: undefined
-  }, "Index Page"), __jsx(_components_Link_index_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    to: "/home",
+  }), __jsx(Description, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 59
+    },
+    __self: undefined
+  }), __jsx(Divider, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: undefined
+  }, __jsx(_components_Link_index_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    to: "/login",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61
     },
     __self: undefined
   }, __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 62
     },
     __self: undefined
-  }, "Home")));
+  }, "Login to save favorites")), __jsx(Break, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64
+    },
+    __self: undefined
+  }), __jsx(_components_Link_index_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    to: "/home",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65
+    },
+    __self: undefined
+  }, __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66
+    },
+    __self: undefined
+  }, "Browse without logging in"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
@@ -1974,6 +2072,17 @@ module.exports = require("core-js/library/fn/object/keys");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/promise");
+
+/***/ }),
+
+/***/ "polished":
+/*!***************************!*\
+  !*** external "polished" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("polished");
 
 /***/ }),
 

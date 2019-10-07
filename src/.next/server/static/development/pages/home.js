@@ -108,31 +108,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! polished */ "polished");
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(polished__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/home/m/CSC3380_Project/src/components/Link/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-const LinkWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.span`
-	text-decoration: underline;
-	:hover {			
-		color: gray;
-		cursor: pointer;
-	}
+
+const LinkWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
+  overflow: hidden;
+  text-decoration: underline;
+  color: ${p => p.color ? Object(polished__WEBPACK_IMPORTED_MODULE_3__["darken"])(0.1, p.color) : Object(polished__WEBPACK_IMPORTED_MODULE_3__["darken"])(0.1, p.theme.secondary)};
+  :hover {
+    color: ${p => p.color ? Object(polished__WEBPACK_IMPORTED_MODULE_3__["darken"])(0.3, p.color) : Object(polished__WEBPACK_IMPORTED_MODULE_3__["darken"])(0.3, p.theme.secondary)};
+    cursor: pointer;
+  }
 `;
 
 const LinkComp = props => {
   return __jsx(LinkWrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 19
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: props.to,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 20
     },
     __self: undefined
   }, props.children));
@@ -1974,6 +1979,17 @@ module.exports = require("core-js/library/fn/object/keys");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/promise");
+
+/***/ }),
+
+/***/ "polished":
+/*!***************************!*\
+  !*** external "polished" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("polished");
 
 /***/ }),
 

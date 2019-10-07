@@ -12,11 +12,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "antd": "^3.23.6",
     "next": "^9.0.6",
+    "next-images": "^1.2.0",
     "polished": "^3.4.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "styled-components": "^4.3.2"
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "redux": "^4.0.4",
+    "styled-components": "^4.4.0",
+    "video-react": "^0.14.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

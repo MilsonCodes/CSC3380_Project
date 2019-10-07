@@ -93,6 +93,36 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./assests/AGIT_thumbnail.png":
+/*!************************************!*\
+  !*** ./assests/AGIT_thumbnail.png ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/AGIT_thumbnail-d34e44fa19f14e654784ff502e4ac6b1.png";
+
+/***/ }),
+
+/***/ "./assests/constants.js":
+/*!******************************!*\
+  !*** ./assests/constants.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const THEME = {
+  background: "#b0bec5",
+  primary: "#ffd54f",
+  secondary: "#4dd0e1",
+  button: "#e0f7fa"
+};
+/* harmony default export */ __webpack_exports__["default"] = (THEME);
+
+/***/ }),
+
 /***/ "./components/Layout/index.js":
 /*!************************************!*\
   !*** ./components/Layout/index.js ***!
@@ -106,39 +136,118 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _assests_constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assests/constants */ "./assests/constants.js");
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! polished */ "polished");
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(polished__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _assests_AGIT_thumbnail_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../assests/AGIT_thumbnail.png */ "./assests/AGIT_thumbnail.png");
+/* harmony import */ var _assests_AGIT_thumbnail_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assests_AGIT_thumbnail_png__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "/home/m/CSC3380_Project/src/components/Layout/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+
+
+
+
+const Background = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
+  background-image: linear-gradient(
+    to bottom,
+    ${props => Object(polished__WEBPACK_IMPORTED_MODULE_4__["lighten"])(0.15, props.theme.background)},
+    ${props => Object(polished__WEBPACK_IMPORTED_MODULE_4__["lighten"])(0.3, props.theme.background)}
+  );
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+`;
+const Header = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.span`
+  z-index: 1;
+  display: flex;
+  position: relative;
+  padding: 15px;
+  margin: auto;
+`;
+const Image = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.img`
+  @media (max-width: 900px) {
+    width: 30%;
+    height: 25%;
+  }
+  @media (min-width: 900px) {
+    width: 10%;
+    height: 7.5%;
+  }
+`;
 
 const Layout = props => {
   return __jsx("div", {
     className: "Layout",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 44
     },
     __self: undefined
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 45
     },
     __self: undefined
-  }, __jsx("title", {
+  }, __jsx("link", {
+    rel: "stylesheet",
+    href: "/css/video-react.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 46
     },
     __self: undefined
-  }, "Agit")), __jsx("div", {
+  }), __jsx("link", {
+    href: "https://fonts.googleapis.com/css?family=Montserrat&display=swap",
+    rel: "stylesheet",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    },
+    __self: undefined
+  }), __jsx("title", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: undefined
+  }, "Agit - Eat Special")), __jsx(styled_components__WEBPACK_IMPORTED_MODULE_2__["ThemeProvider"], {
+    theme: _assests_constants__WEBPACK_IMPORTED_MODULE_3__["default"],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: undefined
+  }, __jsx(Background, {
     className: "Content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 54
     },
     __self: undefined
-  }, props.children));
+  }, __jsx(Header, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: undefined
+  }, __jsx(Image, {
+    src: _assests_AGIT_thumbnail_png__WEBPACK_IMPORTED_MODULE_5___default.a,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: undefined
+  })), props.children)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
@@ -1901,6 +2010,17 @@ module.exports = require("next/head");
 
 /***/ }),
 
+/***/ "polished":
+/*!***************************!*\
+  !*** external "polished" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("polished");
+
+/***/ }),
+
 /***/ "prop-types":
 /*!*****************************!*\
   !*** external "prop-types" ***!
@@ -1931,6 +2051,17 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-is");
+
+/***/ }),
+
+/***/ "styled-components":
+/*!************************************!*\
+  !*** external "styled-components" ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-components");
 
 /***/ }),
 

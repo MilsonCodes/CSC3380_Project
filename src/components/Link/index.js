@@ -1,21 +1,25 @@
-import Link from 'next/link';
-import styled from 'styled-components';
+import Link from "next/link";
+import styled from "styled-components";
+import { darken } from "polished";
 
-const LinkWrapper = styled.span`
-	text-decoration: underline;
-	:hover {			
-		color: gray;
-		cursor: pointer;
-	}
-`
+const LinkWrapper = styled.div`
+  overflow: hidden;
+  text-decoration: underline;
+  color: ${p =>
+    p.color ? darken(0.1, p.color) : darken(0.1, p.theme.secondary)};
+  :hover {
+    color: ${p =>
+      p.color ? darken(0.3, p.color) : darken(0.3, p.theme.secondary)};
+    cursor: pointer;
+  }
+`;
 
-const LinkComp = (props) => {
-	return(
-	<LinkWrapper>
-		<Link href={props.to}>
-			{props.children}
-		</Link>
-	</LinkWrapper>
-);}
+const LinkComp = props => {
+  return (
+    <LinkWrapper>
+      <Link href={props.to}>{props.children}</Link>
+    </LinkWrapper>
+  );
+};
 
 export default LinkComp;

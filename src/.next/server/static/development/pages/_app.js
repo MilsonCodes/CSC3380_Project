@@ -93,6 +93,25 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./assests/constants.js":
+/*!******************************!*\
+  !*** ./assests/constants.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const THEME = {
+  background: "#b0bec5",
+  primary: "#ffd54f",
+  secondary: "#4dd0e1",
+  button: "#e0f7fa"
+};
+/* harmony default export */ __webpack_exports__["default"] = (THEME);
+
+/***/ }),
+
 /***/ "./components/Layout/index.js":
 /*!************************************!*\
   !*** ./components/Layout/index.js ***!
@@ -106,39 +125,68 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _assests_constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assests/constants */ "./assests/constants.js");
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! polished */ "polished");
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(polished__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/home/m/CSC3380_Project/src/components/Layout/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+
+
+
+const Background = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
+  background-image: linear-gradient(
+    to bottom,
+    ${props => Object(polished__WEBPACK_IMPORTED_MODULE_4__["lighten"])(0.2, props.theme.background)},
+    ${props => Object(polished__WEBPACK_IMPORTED_MODULE_4__["lighten"])(0.3, props.theme.background)}
+  );
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  overflow: hidden;
+`;
 
 const Layout = props => {
   return __jsx("div", {
     className: "Layout",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 23
     },
     __self: undefined
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 24
     },
     __self: undefined
   }, __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 25
     },
     __self: undefined
-  }, "Agit")), __jsx("div", {
+  }, "Agit")), __jsx(styled_components__WEBPACK_IMPORTED_MODULE_2__["ThemeProvider"], {
+    theme: _assests_constants__WEBPACK_IMPORTED_MODULE_3__["default"],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: undefined
+  }, __jsx(Background, {
     className: "Content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 28
     },
     __self: undefined
-  }, props.children));
+  }, props.children)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
@@ -1901,6 +1949,17 @@ module.exports = require("next/head");
 
 /***/ }),
 
+/***/ "polished":
+/*!***************************!*\
+  !*** external "polished" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("polished");
+
+/***/ }),
+
 /***/ "prop-types":
 /*!*****************************!*\
   !*** external "prop-types" ***!
@@ -1931,6 +1990,17 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-is");
+
+/***/ }),
+
+/***/ "styled-components":
+/*!************************************!*\
+  !*** external "styled-components" ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-components");
 
 /***/ }),
 

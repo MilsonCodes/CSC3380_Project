@@ -3669,7 +3669,7 @@ module.exports = (__webpack_require__(/*! dll-reference dll_129a35c7ec57967eb265
 
 /***/ }),
 
-/***/ 0:
+/***/ 1:
 /*!*********************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2Fhome%2Fm%2FCSC3380_Project%2Fsrc%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js ***!
   \*********************************************************************************************************************************************************************************/
@@ -3692,5 +3692,5 @@ module.exports = dll_129a35c7ec57967eb265;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=_error.js.map

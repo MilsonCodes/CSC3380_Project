@@ -35,9 +35,9 @@ function _templateObject() {
 
 
 var LinkWrapper = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject(), function (p) {
-  return p.color ? Object(polished__WEBPACK_IMPORTED_MODULE_4__["darken"])(0.1, p.color) : Object(polished__WEBPACK_IMPORTED_MODULE_4__["darken"])(0.1, p.theme.secondary);
+  return p.color ? Object(polished__WEBPACK_IMPORTED_MODULE_4__["darken"])(0.1, p.color) : Object(polished__WEBPACK_IMPORTED_MODULE_4__["darken"])(0.2, p.theme.secondary);
 }, function (p) {
-  return p.color ? Object(polished__WEBPACK_IMPORTED_MODULE_4__["darken"])(0.3, p.color) : Object(polished__WEBPACK_IMPORTED_MODULE_4__["darken"])(0.3, p.theme.secondary);
+  return p.color ? Object(polished__WEBPACK_IMPORTED_MODULE_4__["darken"])(0.3, p.color) : Object(polished__WEBPACK_IMPORTED_MODULE_4__["darken"])(0.35, p.theme.secondary);
 });
 
 var LinkComp = function LinkComp(props) {
@@ -17864,7 +17864,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  justify-content: center;\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  justify-content: center;\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  position: relative;\n  top: 30%;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -17874,7 +17874,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  p {\n    text-align: center;\n  }\n  padding: 20px 20px;\n  h3 {\n    text-align: center;\n  }\n  background-color: ", ";\n  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);\n  border: none;\n  border-radius: 50px;\n  transition: all ease-in-out 1s;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  p {\n    text-align: center;\n  }\n  padding: 20px 20px;\n  h2 {\n    padding: 20px 0 10px 10%;\n  }\n  background-color: ", ";\n  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);\n  border: none;\n  border-radius: 50px;\n  transition: all ease-in-out 1s;\n  height: 70%;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -17894,7 +17894,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  color: ", ";\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  color: ", ";\n  padding: auto;\n  margin: auto;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -17907,7 +17907,7 @@ function _templateObject() {
 
 
 
-var Welcome = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].h3(_templateObject(), function (p) {
+var Welcome = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].h2(_templateObject(), function (p) {
   return p.theme.text | "black";
 });
 var Descr = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].p(_templateObject2(), function (p) {
@@ -17922,7 +17922,7 @@ var Message = function Message() {
   return __jsx(Welcome, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 48
     },
     __self: this
   }, "Welcome to Agit!");
@@ -17932,13 +17932,19 @@ var Description = function Description() {
   return __jsx(Descr, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 53
     },
     __self: this
-  }, "We are dedicated to connecting customers to businesses that offer specials. ", __jsx("br", {
+  }, "We are dedicated to connecting customers to businesses that offer discounts and deals on a monthly, weekly, or daily basis.", __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 56
+    },
+    __self: this
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
     },
     __self: this
   }), "100% free, 100% accessible, 100% special.");
@@ -17948,57 +17954,57 @@ var Index = function Index() {
   return __jsx(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 65
     },
     __self: this
   }, __jsx(Message, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 66
     },
     __self: this
   }), __jsx(Description, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 67
     },
     __self: this
   }), __jsx(Divider, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 68
     },
     __self: this
   }, __jsx(_components_Link_index_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
     to: "/login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 69
     },
     __self: this
   }, __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 70
     },
     __self: this
   }, "Login to save favorites")), __jsx(Break, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 72
     },
     __self: this
   }), __jsx(_components_Link_index_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
     to: "/home",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 73
     },
     __self: this
   }, __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 74
     },
     __self: this
   }, "Browse without logging in"))));

@@ -119,9 +119,9 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const LinkWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
   overflow: hidden;
   text-decoration: underline;
-  color: ${p => p.color ? Object(polished__WEBPACK_IMPORTED_MODULE_3__["darken"])(0.1, p.color) : Object(polished__WEBPACK_IMPORTED_MODULE_3__["darken"])(0.1, p.theme.secondary)};
+  color: ${p => p.color ? Object(polished__WEBPACK_IMPORTED_MODULE_3__["darken"])(0.1, p.color) : Object(polished__WEBPACK_IMPORTED_MODULE_3__["darken"])(0.2, p.theme.secondary)};
   :hover {
-    color: ${p => p.color ? Object(polished__WEBPACK_IMPORTED_MODULE_3__["darken"])(0.3, p.color) : Object(polished__WEBPACK_IMPORTED_MODULE_3__["darken"])(0.3, p.theme.secondary)};
+    color: ${p => p.color ? Object(polished__WEBPACK_IMPORTED_MODULE_3__["darken"])(0.3, p.color) : Object(polished__WEBPACK_IMPORTED_MODULE_3__["darken"])(0.35, p.theme.secondary)};
     cursor: pointer;
   }
 `;
@@ -1865,8 +1865,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const Welcome = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.h3`
+const Welcome = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.h2`
   color: ${p => p.theme.text | "black"};
+  padding: auto;
+  margin: auto;
 `;
 const Descr = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.p`
   color: ${p => p.theme.text | "#616161"};
@@ -1877,20 +1879,23 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
     text-align: center;
   }
   padding: 20px 20px;
-  h3 {
-    text-align: center;
+  h2 {
+    padding: 20px 0 10px 10%;
   }
   background-color: ${offWhite};
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
   border: none;
   border-radius: 50px;
   transition: all ease-in-out 1s;
+  height: 70%;
 `;
 const Divider = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
   justify-content: center;
   align-items: center;
   display: flex;
   flex-wrap: wrap;
+  position: relative;
+  top: 30%;
 `;
 const Break = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
   width: 100%;
@@ -1900,7 +1905,7 @@ const Message = () => {
   return __jsx(Welcome, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 48
     },
     __self: undefined
   }, "Welcome to Agit!");
@@ -1910,13 +1915,19 @@ const Description = () => {
   return __jsx(Descr, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 53
     },
     __self: undefined
-  }, "We are dedicated to connecting customers to businesses that offer specials. ", __jsx("br", {
+  }, "We are dedicated to connecting customers to businesses that offer discounts and deals on a monthly, weekly, or daily basis.", __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 56
+    },
+    __self: undefined
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
     },
     __self: undefined
   }), "100% free, 100% accessible, 100% special.");
@@ -1926,57 +1937,57 @@ const Index = () => {
   return __jsx(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 65
     },
     __self: undefined
   }, __jsx(Message, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 66
     },
     __self: undefined
   }), __jsx(Description, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 67
     },
     __self: undefined
   }), __jsx(Divider, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 68
     },
     __self: undefined
   }, __jsx(_components_Link_index_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
     to: "/login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 69
     },
     __self: undefined
   }, __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 70
     },
     __self: undefined
   }, "Login to save favorites")), __jsx(Break, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 72
     },
     __self: undefined
   }), __jsx(_components_Link_index_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
     to: "/home",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 73
     },
     __self: undefined
   }, __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 74
     },
     __self: undefined
   }, "Browse without logging in"))));

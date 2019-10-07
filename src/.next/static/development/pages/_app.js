@@ -8340,16 +8340,6 @@ module.exports = (__webpack_require__(/*! dll-reference dll_b35e09dc2ca94ac6d9c1
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ "./node_modules/prop-types/checkPropTypes.js":
-/*!*********************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_b35e09dc2ca94ac6d9c1 ***!
-  \*********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = (__webpack_require__(/*! dll-reference dll_b35e09dc2ca94ac6d9c1 */ "dll-reference dll_b35e09dc2ca94ac6d9c1"))("./node_modules/prop-types/checkPropTypes.js");
-=======
 /***/ "./node_modules/polished/dist/polished.es.js":
 /*!***************************************************!*\
   !*** ./node_modules/polished/dist/polished.es.js ***!
@@ -8442,7 +8432,6 @@ function last() {
 
   return _ref = arguments.length - 1, _ref < 0 || arguments.length <= _ref ? undefined : arguments[_ref];
 }
->>>>>>> ad582ec62bc1693b3f3953c7c737c3318399a503
 
 function negation(a) {
   return -a;
@@ -15903,21 +15892,10 @@ function css(styles) {
   return flatten(interleave(styles, interpolations));
 }
 
-<<<<<<< HEAD
-/***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
-/*!*******************************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_b35e09dc2ca94ac6d9c1 ***!
-  \*******************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = (__webpack_require__(/*! dll-reference dll_b35e09dc2ca94ac6d9c1 */ "dll-reference dll_b35e09dc2ca94ac6d9c1"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
-=======
 // 
 
 function constructWithOptions(componentConstructor, tag) {
   var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : EMPTY_OBJECT;
->>>>>>> ad582ec62bc1693b3f3953c7c737c3318399a503
 
   if (!Object(react_is__WEBPACK_IMPORTED_MODULE_4__["isValidElementType"])(tag)) {
     throw new StyledComponentsError(1, String(tag));
@@ -16387,21 +16365,10 @@ var ServerStyleSheet = function () {
       throw new StyledComponentsError(3);
     }
 
-<<<<<<< HEAD
-/***/ "./node_modules/react/index.js":
-/*!*******************************************************************************************!*\
-  !*** delegated ./node_modules/react/index.js from dll-reference dll_b35e09dc2ca94ac6d9c1 ***!
-  \*******************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = (__webpack_require__(/*! dll-reference dll_b35e09dc2ca94ac6d9c1 */ "dll-reference dll_b35e09dc2ca94ac6d9c1"))("./node_modules/react/index.js");
-=======
     /* the tag index keeps track of which tags have already been emitted */
     var instance = this.instance;
 
     var instanceTagIndex = 0;
->>>>>>> ad582ec62bc1693b3f3953c7c737c3318399a503
 
     var streamAttr = SC_STREAM_ATTR + '="true"';
 

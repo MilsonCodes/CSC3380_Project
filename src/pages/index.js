@@ -11,6 +11,7 @@ const Welcome = styled.h2`
 
 const Descr = styled.p`
   color: ${p => p.theme.text | "#616161"};
+  padding-top: 25px;
 `;
 
 let offWhite = transparentize(0.2, "white");

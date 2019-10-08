@@ -1872,6 +1872,7 @@ const Welcome = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.h2`
 `;
 const Descr = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.p`
   color: ${p => p.theme.text | "#616161"};
+  padding-top: 25px;
 `;
 let offWhite = Object(polished__WEBPACK_IMPORTED_MODULE_3__["transparentize"])(0.2, "white");
 const Container = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
@@ -1905,7 +1906,7 @@ const Message = () => {
   return __jsx(Welcome, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 49
     },
     __self: undefined
   }, "Welcome to Agit!");
@@ -1915,19 +1916,19 @@ const Description = () => {
   return __jsx(Descr, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 54
     },
     __self: undefined
   }, "We are dedicated to connecting customers to businesses that offer discounts and deals on a monthly, weekly, or daily basis.", __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 57
     },
     __self: undefined
   }), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 58
     },
     __self: undefined
   }), "100% free, 100% accessible, 100% special.");
@@ -1937,57 +1938,57 @@ const Index = () => {
   return __jsx(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 66
     },
     __self: undefined
   }, __jsx(Message, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 67
     },
     __self: undefined
   }), __jsx(Description, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 68
     },
     __self: undefined
   }), __jsx(Divider, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 69
     },
     __self: undefined
   }, __jsx(_components_Link_index_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
     to: "/login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 70
     },
     __self: undefined
   }, __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 71
     },
     __self: undefined
   }, "Login to save favorites")), __jsx(Break, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 73
     },
     __self: undefined
   }), __jsx(_components_Link_index_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
     to: "/home",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 74
     },
     __self: undefined
   }, __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 75
     },
     __self: undefined
   }, "Browse without logging in"))));

@@ -27,7 +27,7 @@ var _jsxFileName = "/home/m/CSC3380_Project/src/components/Layout/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 function _templateObject3() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  @media (max-width: 900px) {\n    width: 30%;\n    height: 25%;\n  }\n  @media (min-width: 900px) {\n    width: 10%;\n    height: 7.5%;\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  @media (max-width: 900px) {\n    width: 30%;\n    height: 25%;\n  }\n  @media (min-width: 900px) {\n    width: 10%;\n    height: 7.5%;\n  }\n  :hover {\n  }\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -76,13 +76,13 @@ var Layout = function Layout(props) {
     className: "Layout",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 48
     },
     __self: this
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 49
     },
     __self: this
   }, __jsx("link", {
@@ -90,7 +90,7 @@ var Layout = function Layout(props) {
     href: "/css/video-react.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 50
     },
     __self: this
   }), __jsx("link", {
@@ -98,47 +98,47 @@ var Layout = function Layout(props) {
     rel: "stylesheet",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 51
     },
     __self: this
   }), __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 55
     },
     __self: this
   }, "Agit - Eat Special")), __jsx(styled_components__WEBPACK_IMPORTED_MODULE_3__["ThemeProvider"], {
     theme: _assests_constants__WEBPACK_IMPORTED_MODULE_4__["default"],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 57
     },
     __self: this
   }, __jsx(Background, {
     className: "Content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 58
     },
     __self: this
   }, __jsx(Header, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 59
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 60
     },
     __self: this
   }, __jsx(Image, {
     src: _assests_AGIT_thumbnail_png__WEBPACK_IMPORTED_MODULE_6___default.a,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 61
     },
     __self: this
   }))), props.children)));
@@ -149,4 +149,4 @@ var Layout = function Layout(props) {
 /***/ })
 
 })
-//# sourceMappingURL=_app.js.fded8fcc7563bb660965.hot-update.js.map
+//# sourceMappingURL=_app.js.e8a4e3c87975779b0ff8.hot-update.js.map

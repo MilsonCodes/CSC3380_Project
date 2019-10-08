@@ -39,6 +39,9 @@ const Image = styled.img`
     width: 10%;
     height: 7.5%;
   }
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const Layout = props => {

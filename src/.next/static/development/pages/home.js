@@ -17884,7 +17884,7 @@ var Home = function Home() {
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!**************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fhome&absolutePagePath=%2Fhome%2Fm%2FCSC3380_Project%2Fsrc%2Fpages%2Fhome.js ***!
   \**************************************************************************************************************************/
@@ -17907,5 +17907,5 @@ module.exports = dll_b35e09dc2ca94ac6d9c1;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=home.js.map

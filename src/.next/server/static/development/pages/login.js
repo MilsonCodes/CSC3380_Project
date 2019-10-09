@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1843,10 +1843,10 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
-/***/ "./pages/home.js":
-/*!***********************!*\
-  !*** ./pages/home.js ***!
-  \***********************/
+/***/ "./pages/login.js":
+/*!************************!*\
+  !*** ./pages/login.js ***!
+  \************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1854,53 +1854,51 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Link_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Link/index.js */ "./components/Link/index.js");
-var _jsxFileName = "/home/m/CSC3380_Project/src/pages/home.js";
+/* harmony import */ var _components_Link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Link */ "./components/Link/index.js");
+var _jsxFileName = "/home/m/CSC3380_Project/src/pages/login.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-const Home = () => {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 5
-    },
-    __self: undefined
-  }, __jsx("h2", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    },
-    __self: undefined
-  }, "Welcome to Agit!"), __jsx(_components_Link_index_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    to: "/login",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    },
-    __self: undefined
-  }, __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    },
-    __self: undefined
-  }, "Login to Continue")));
-};
+const Login = () => __jsx("div", {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 4
+  },
+  __self: undefined
+}, __jsx("h2", {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 5
+  },
+  __self: undefined
+}, "Welcome to the Login Page!"), __jsx(_components_Link__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  to: "/home",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 6
+  },
+  __self: undefined
+}, __jsx("p", {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 7
+  },
+  __self: undefined
+}, "Home Page")));
 
-/* harmony default export */ __webpack_exports__["default"] = (Home);
+/* harmony default export */ __webpack_exports__["default"] = (Login);
 
 /***/ }),
 
-/***/ 6:
-/*!*****************************!*\
-  !*** multi ./pages/home.js ***!
-  \*****************************/
+/***/ 5:
+/*!******************************!*\
+  !*** multi ./pages/login.js ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/m/CSC3380_Project/src/pages/home.js */"./pages/home.js");
+module.exports = __webpack_require__(/*! /home/m/CSC3380_Project/src/pages/login.js */"./pages/login.js");
 
 
 /***/ }),
@@ -2060,4 +2058,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=home.js.map
+//# sourceMappingURL=login.js.map

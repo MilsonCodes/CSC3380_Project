@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/home.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/login.js"],{
 
 /***/ "./components/Link/index.js":
 /*!**********************************!*\
@@ -5363,21 +5363,21 @@ function concatArrays(originVal, newVal) {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fhome&absolutePagePath=%2Fhome%2Fm%2FCSC3380_Project%2Fsrc%2Fpages%2Fhome.js!./":
-/*!**********************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fhome&absolutePagePath=%2Fhome%2Fm%2FCSC3380_Project%2Fsrc%2Fpages%2Fhome.js ***!
-  \**********************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Flogin&absolutePagePath=%2Fhome%2Fm%2FCSC3380_Project%2Fsrc%2Fpages%2Flogin.js!./":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Flogin&absolutePagePath=%2Fhome%2Fm%2FCSC3380_Project%2Fsrc%2Fpages%2Flogin.js ***!
+  \************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/home", function() {
-      var mod = __webpack_require__(/*! ./pages/home.js */ "./pages/home.js")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/login", function() {
+      var mod = __webpack_require__(/*! ./pages/login.js */ "./pages/login.js")
       if(true) {
-        module.hot.accept(/*! ./pages/home.js */ "./pages/home.js", function() {
-          if(!next.router.components["/home"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/home.js */ "./pages/home.js")
-          next.router.update("/home", updatedPage)
+        module.hot.accept(/*! ./pages/login.js */ "./pages/login.js", function() {
+          if(!next.router.components["/login"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/login.js */ "./pages/login.js")
+          next.router.update("/login", updatedPage)
         })
       }
       return mod
@@ -17834,10 +17834,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./pages/home.js":
-/*!***********************!*\
-  !*** ./pages/home.js ***!
-  \***********************/
+/***/ "./pages/login.js":
+/*!************************!*\
+  !*** ./pages/login.js ***!
+  \************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -17845,53 +17845,53 @@ module.exports = function(module) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Link_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Link/index.js */ "./components/Link/index.js");
-var _jsxFileName = "/home/m/CSC3380_Project/src/pages/home.js";
+/* harmony import */ var _components_Link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Link */ "./components/Link/index.js");
+var _jsxFileName = "/home/m/CSC3380_Project/src/pages/login.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-var Home = function Home() {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
+var Login = function Login() {
+  return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 4
     },
     __self: this
   }, __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 5
     },
     __self: this
-  }, "Welcome to Agit!"), __jsx(_components_Link_index_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    to: "/login",
+  }, "Welcome to the Login Page!"), __jsx(_components_Link__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    to: "/home",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 6
     },
     __self: this
   }, __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 7
     },
     __self: this
-  }, "Login to Continue")));
+  }, "Home Page")));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Home);
+/* harmony default export */ __webpack_exports__["default"] = (Login);
 
 /***/ }),
 
-/***/ 3:
-/*!**************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fhome&absolutePagePath=%2Fhome%2Fm%2FCSC3380_Project%2Fsrc%2Fpages%2Fhome.js ***!
-  \**************************************************************************************************************************/
+/***/ 2:
+/*!****************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Flogin&absolutePagePath=%2Fhome%2Fm%2FCSC3380_Project%2Fsrc%2Fpages%2Flogin.js ***!
+  \****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fhome&absolutePagePath=%2Fhome%2Fm%2FCSC3380_Project%2Fsrc%2Fpages%2Fhome.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fhome&absolutePagePath=%2Fhome%2Fm%2FCSC3380_Project%2Fsrc%2Fpages%2Fhome.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Flogin&absolutePagePath=%2Fhome%2Fm%2FCSC3380_Project%2Fsrc%2Fpages%2Flogin.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Flogin&absolutePagePath=%2Fhome%2Fm%2FCSC3380_Project%2Fsrc%2Fpages%2Flogin.js!./");
 
 
 /***/ }),
@@ -17907,5 +17907,5 @@ module.exports = dll_b35e09dc2ca94ac6d9c1;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=home.js.map
+},[[2,"static/runtime/webpack.js"]]]);
+//# sourceMappingURL=login.js.map

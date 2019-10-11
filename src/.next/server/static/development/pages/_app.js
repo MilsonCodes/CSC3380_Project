@@ -186,6 +186,9 @@ const Image = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.img`
     width: 10%;
     height: 7.5%;
   }
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const Layout = props => {
@@ -193,13 +196,13 @@ const Layout = props => {
     className: "Layout",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 49
     },
     __self: undefined
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 50
     },
     __self: undefined
   }, __jsx("link", {
@@ -207,7 +210,7 @@ const Layout = props => {
     href: "/css/video-react.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 51
     },
     __self: undefined
   }), __jsx("link", {
@@ -215,47 +218,47 @@ const Layout = props => {
     rel: "stylesheet",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 52
     },
     __self: undefined
   }), __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 56
     },
     __self: undefined
   }, "Agit - Eat Special")), __jsx(styled_components__WEBPACK_IMPORTED_MODULE_2__["ThemeProvider"], {
     theme: _assests_constants__WEBPACK_IMPORTED_MODULE_3__["default"],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 58
     },
     __self: undefined
   }, __jsx(Background, {
     className: "Content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 59
     },
     __self: undefined
   }, __jsx(Header, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 60
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 61
     },
     __self: undefined
   }, __jsx(Image, {
     src: _assests_AGIT_thumbnail_png__WEBPACK_IMPORTED_MODULE_5___default.a,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 62
     },
     __self: undefined
   }))), props.children)));

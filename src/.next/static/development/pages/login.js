@@ -17884,7 +17884,7 @@ var Login = function Login() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!****************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Flogin&absolutePagePath=%2Fhome%2Fm%2FCSC3380_Project%2Fsrc%2Fpages%2Flogin.js ***!
   \****************************************************************************************************************************/
@@ -17907,5 +17907,5 @@ module.exports = dll_b35e09dc2ca94ac6d9c1;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=login.js.map

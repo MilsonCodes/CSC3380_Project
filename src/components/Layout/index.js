@@ -4,6 +4,8 @@ import THEME from "../../assests/constants";
 import { lighten } from "polished";
 import logo from "../../assests/AGIT_thumbnail.png";
 import Link from "next/link";
+import Modal from "../Modal";
+import Button from "../Button";
 
 const Background = styled.div`
   background-image: linear-gradient(
@@ -29,6 +31,23 @@ const Header = styled.span`
   margin: auto;
 `;
 
+const Footer = styled.span`
+  z-index: 1;
+  position: fixed;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  left: 0;
+  bottom: 1%;
+  width: 100%;
+  margin: 1px;
+  padding: 1px;
+  overflow: hidden;
+  justify-content: center;
+  ${"" /* background-color: ${p => */}
+  ${"" /* transparentize(0.2, darken(0.2, p.theme.background))}; */}
+`;
+
 // Used to scale to mobile
 const Image = styled.img`
   @media (max-width: 900px) {
@@ -43,6 +62,57 @@ const Image = styled.img`
     cursor: pointer;
   }
 `;
+
+const BugReportForm = () => {
+  let Span = styled.span`
+    background-color: "black";
+    margin: auto;
+  `;
+  let Form = styled.form`
+    border: none;
+    span {
+      float: right;
+    }
+  `;
+  let Input = styled.input`
+    width: 95%;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 0 10px 0 ${p => lighten(0.2, p.theme.secondary)};
+    min-height: ${p => p.height};
+    margin: 5px;
+    padding: 5px;
+    outline: none;
+    transition: all ease 0.5s;
+    font-family: "Montserrat", sans-serif;
+    &::placeholder {
+      opacity: 0.6;
+      ${Input}:focus ~ &,
+      &.filled {
+        display: none;
+      }
+    }
+  `;
+  return (
+    <Span>
+      <h3>Bug Report</h3>
+      <Form>
+        <Input type='text' name='Title' placeholder='Title of Issue'></Input>
+        <Input
+          type='text'
+          name='Description'
+          height='50vh'
+          placeholder='Description of issue in as much detail as possible'
+        />
+        <span>
+          <Button size='medium' type='submit'>
+            Submit
+          </Button>
+        </span>
+      </Form>
+    </Span>
+  );
+};
 
 const Layout = props => {
   return (
@@ -63,6 +133,11 @@ const Layout = props => {
             </Link>
           </Header>
           {props.children}
+          <Footer>
+            <Modal title='Bug Report' element={<BugReportForm />} color='black'>
+              Report an issue
+            </Modal>
+          </Footer>
         </Background>
       </ThemeProvider>
     </div>

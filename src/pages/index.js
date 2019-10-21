@@ -38,7 +38,6 @@ const Divider = styled.div`
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  top: 30%;
 `;
 
 const Break = styled.div`
@@ -54,7 +53,6 @@ const Description = () => {
     <Descr>
       We are dedicated to connecting customers to businesses that offer
       discounts and deals on a monthly, weekly, or daily basis.
-      <br></br>
       <br></br>
       100% free, 100% accessible, 100% special.
     </Descr>

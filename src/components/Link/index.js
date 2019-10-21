@@ -9,14 +9,18 @@ const LinkWrapper = styled.div`
     p.color ? darken(0.1, p.color) : darken(0.2, p.theme.secondary)};
   :hover {
     color: ${p =>
-      p.color ? darken(0.3, p.color) : darken(0.35, p.theme.secondary)};
+      p.color
+        ? p.color != "black"
+          ? darken(0.3, p.color)
+          : darken(-0.3, p.color)
+        : darken(0.35, p.theme.secondary)};
     cursor: pointer;
   }
 `;
 
 const LinkComp = props => {
   return (
-    <LinkWrapper>
+    <LinkWrapper {...props}>
       <Link href={props.to}>{props.children}</Link>
     </LinkWrapper>
   );

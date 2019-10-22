@@ -86,8 +86,8 @@ const BugReportForm = () => {
     transition: all ease 0.5s;
     font-family: "Montserrat", sans-serif;
     &::placeholder {
-      opacity: 0.6;
-      ${Input}:focus ~ &,
+      opacity: 0.4;
+      input:focus ~ &,
       &.filled {
         display: none;
       }
@@ -105,7 +105,13 @@ const BugReportForm = () => {
           placeholder='Description of issue in as much detail as possible'
         />
         <span>
-          <Button size='medium' type='submit'>
+          <Button
+            onClick={() => {
+              console.log("TODO: Validate input");
+            }}
+            size='medium'
+            type='submit'
+          >
             Submit
           </Button>
         </span>
@@ -118,7 +124,6 @@ const Layout = props => {
   return (
     <div className='Layout'>
       <Head>
-        <link rel='stylesheet' href='/css/video-react.css' />
         <link
           href='https://fonts.googleapis.com/css?family=Montserrat&display=swap'
           rel='stylesheet'

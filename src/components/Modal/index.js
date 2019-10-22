@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../Button";
 import { FiX } from "react-icons/fi";
-import LinkComp from "../Link";
+import { darken } from "polished";
 
 const ModalDiv = styled.div`
   position: fixed;
@@ -59,13 +59,29 @@ const Content = styled.div`
   }
 `;
 
+const Report = styled.div`
+  overflow: hidden;
+  text-decoration: underline;
+  color: ${p =>
+    p.color ? darken(0.1, p.color) : darken(0.2, p.theme.secondary)};
+  :hover {
+    color: ${p =>
+      p.color
+        ? p.color != "black"
+          ? darken(0.3, p.color)
+          : darken(-0.3, p.color)
+        : darken(0.35, p.theme.secondary)};
+    cursor: pointer;
+  }
+`;
+
 const Modal = props => {
   const [isOpen, setOpen] = React.useState(false);
   return (
     <div>
-      <LinkComp {...props} onClick={() => setOpen(true)}>
+      <Report {...props} onClick={() => setOpen(true)}>
         {props.children}
-      </LinkComp>
+      </Report>
       <ModalDiv open={isOpen}>
         <Overlay onClick={() => setOpen(false)} />
         <Content>

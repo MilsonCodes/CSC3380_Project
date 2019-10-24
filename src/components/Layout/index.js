@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Head from "next/head";
 import styled, { ThemeProvider } from "styled-components";
 import THEME from "../../assests/constants";
@@ -93,10 +94,20 @@ const BugReportForm = () => {
       }
     }
   `;
+  const [report, setReport] = useState({ title: "", description: "" });
+  function handleSubmit(event) {
+    const name = target.name;
+    event.preventDefault();
+    setReport({
+      [name]: value
+    });
+    // handle report on the backend
+    console.log(report);
+  }
   return (
     <Span>
       <h3>Bug Report</h3>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Input type='text' name='Title' placeholder='Title of Issue'></Input>
         <Input
           type='text'
@@ -105,13 +116,7 @@ const BugReportForm = () => {
           placeholder='Description of issue in as much detail as possible'
         />
         <span>
-          <Button
-            onClick={() => {
-              console.log("TODO: Validate input");
-            }}
-            size='medium'
-            type='submit'
-          >
+          <Button size='medium' type='submit'>
             Submit
           </Button>
         </span>

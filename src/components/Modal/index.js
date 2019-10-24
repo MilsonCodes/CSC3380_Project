@@ -59,7 +59,7 @@ const Content = styled.div`
   }
 `;
 
-const Report = styled.div`
+const Text = styled.div`
   overflow: hidden;
   text-decoration: underline;
   color: ${p =>
@@ -77,12 +77,20 @@ const Report = styled.div`
 
 const Modal = props => {
   const [isOpen, setOpen] = React.useState(false);
+  if (process.browser) {
+    document.addEventListener("keyup", function(e) {
+      // closes on escape key
+      if (e.keyCode == 27) {
+        setOpen(false);
+      }
+    });
+  }
   return (
     <div>
-      <Report {...props} onClick={() => setOpen(true)}>
+      <Text {...props} onClick={() => setOpen(true)}>
         {props.children}
-      </Report>
-      <ModalDiv open={isOpen}>
+      </Text>
+      <ModalDiv on open={isOpen}>
         <Overlay onClick={() => setOpen(false)} />
         <Content>
           <span>

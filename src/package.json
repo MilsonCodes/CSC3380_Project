@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "antd": "^3.23.6",
+    "fs": "0.0.1-security",
     "next": "^9.0.6",
     "next-images": "^1.2.0",
     "polished": "^3.4.1",

@@ -64,6 +64,7 @@ const Image = styled.img`
   }
 `;
 
+// This will be shortened with the creation of the form component
 const BugReportForm = () => {
   let Span = styled.span`
     background-color: "black";

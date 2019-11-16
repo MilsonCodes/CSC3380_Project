@@ -4,7 +4,6 @@ const { User } = model;
 
 class Users {
   static signUp(req, res) {
-    console.log(req.body);
     const {
       name,
       username,

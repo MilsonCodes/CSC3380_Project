@@ -11,8 +11,8 @@ class Users {
       password,
       favorites,
       location,
-      restaurant
-      // admin
+      restaurant,
+      admin
     } = req.body;
     return User.create({
       name,
@@ -21,8 +21,8 @@ class Users {
       password,
       favorites,
       location,
-      restaurant
-      // admin
+      restaurant,
+      admin
     }).then(userData =>
       res
         .status(201)

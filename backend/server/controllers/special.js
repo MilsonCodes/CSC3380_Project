@@ -20,5 +20,11 @@ class Specials {
       })
     );
   }
+  static getAll(req, res) {
+    const specials = Special.findAll({ where: { deleted: false } });
+    return specials.then(specials =>
+      res.status(201).send({ message: "All Specials: ", specials })
+    );
+  }
 }
 export default Specials;

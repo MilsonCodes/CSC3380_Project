@@ -4,7 +4,6 @@ const { User } = model;
 
 class Users {
   static signUp(req, res) {
-    console.log(req.body);
     const {
       name,
       username,
@@ -12,8 +11,8 @@ class Users {
       password,
       favorites,
       location,
-      restaurant
-      // admin
+      restaurant,
+      admin
     } = req.body;
     return User.create({
       name,
@@ -22,8 +21,8 @@ class Users {
       password,
       favorites,
       location,
-      restaurant
-      // admin
+      restaurant,
+      admin
     }).then(userData =>
       res
         .status(201)

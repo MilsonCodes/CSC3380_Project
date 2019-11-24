@@ -22,8 +22,7 @@ export default (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: { args: false, msg: "Please enter a password" },
         validate: {
-          isNotShort: args => {
-            console.log(args);
+          isNotShort: value => {
             if (value.length < 8) {
               throw new Error("Password should be at least 8 characters");
             }

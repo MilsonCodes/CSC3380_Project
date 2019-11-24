@@ -21,7 +21,8 @@ export default (sequelize, DataTypes) => {
       image: DataTypes.STRING,
       startDate: DataTypes.DATE,
       endDate: DataTypes.DATE,
-      userId: DataTypes.INTEGER
+      userId: DataTypes.INTEGER,
+      deleted: DataTypes.BOOLEAN
     },
     {}
   );

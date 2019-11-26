@@ -1,11 +1,9 @@
 import LinkComp from '../components/Link';
+import Forms from '../components/Form';
 
 const Login = () => (
 	<div>
-		<h2>Welcome to the Login Page!</h2>
-		<LinkComp to="/home">
-			<p>Home Page</p>
-		</LinkComp>
+		<Forms.LoginForm />
 	</div>
 );
 

@@ -134,7 +134,7 @@ const Layout = props => {
           href='https://fonts.googleapis.com/css?family=Montserrat&display=swap'
           rel='stylesheet'
         ></link>
-        <title>Agit - Eat Special</title>
+        <title>Agit - Agile Eats</title>
       </Head>
       <ThemeProvider theme={THEME}>
         <Background className='Content'>

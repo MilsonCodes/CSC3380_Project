@@ -8,6 +8,7 @@ border-radius: 30px;
 border: none;
 box-shadow: 0 0 10px 0 ${p => lighten(0.2, p.theme.secondary)};
 min-height: ${p => p.height};
+background-color: ${p => p.color};
 margin: 5px;
 padding: 5px;
 outline: none;

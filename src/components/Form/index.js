@@ -23,18 +23,16 @@ span {
 /**
  * TODO:
  *  - Adjust CSS
- *  - Make password change based on criteria
  *  - Validate and handle login data
  */
 Forms.LoginForm = props => {
-    const [showPassword, setShowPassword] = useState('');
-
-    function onFormChange(event) {
-
-    }
+    const [showPassword, setShowPassword] = useState(false);
 
     function handleSubmit(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
 
+        //Data is ready to route
     }
 
     return (
@@ -42,7 +40,7 @@ Forms.LoginForm = props => {
             <h2>Login</h2>
             <Form onSubmit={handleSubmit}>
                 <Input type="text" name="username" placeholder="Username"/>
-                <Input type={showPassword ? "text" : "password"} name="password" placeholder="Password" onchange={onFormChange}/>
+                <Input type={showPassword ? "text" : "password"} name="password" placeholder="Password"/>
                 <Checkbox name="showPassword" label="Show Password" onChange={e => setShowPassword(e.target.checked)}/>
                 <br/>
                 <span>
@@ -62,32 +60,56 @@ Forms.LoginForm = props => {
 /**
  * TODO:
  *  - Adjust CSS
- *  - Make password change based on criteria
  *  - Validate and handle registration data
  */
 Forms.RegisterForm = props => {
-    const [showPassword, setShowPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+    const [emailCriteria, setEmailCriteria] = useState(true);
+    const [passCriteria, setPassCriteria] = useState(true);
+    const [mainPass, setMainPassword] = useState('');
+    const [confPass, setConfirmPassword] = useState('');
+    const [ownRestaurant, setOwnRestaurant] = useState(false);
 
-    function onFormChange(event) {
+    const onPasswordChange = e => {
+        setMainPassword(e.target.value);
 
+        setPassCriteria((mainPass === confPass) && (mainPass.length >= 8));
+    }
+
+    const onConfPasswordChange = e => {
+        setConfirmPassword(e.target.value);
+
+        setPassCriteria((mainPass === confPass) && (mainPass.length >= 8));
     }
 
     function handleSubmit(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
 
+        if(emailCriteria && passCriteria){
+            //Data is ready to route
+        }
     }
 
     return (
         <FormDiv>
             <h2>Register</h2>
             <Form onSubmit={handleSubmit}>
-                <h3>Personal Info</h3>
-                <Input type="text" name="name" placeholder="Name"/>
-                <Input type="text" name="email" placeholder="E-Mail"/>
+                <h3>Restaurant</h3>
+                <Checkbox name="ownRestaurant" label="Do you own a Restaurant?" onChange={e => setOwnRestaurant(e.target.checked)} />
+                <br/>
+                <h3>{ownRestaurant ? "Business" : "Personal"} Info</h3>
+                <Input type="text" name="name" placeholder={ownRestaurant ? "Restaurant Name" : "Name"}/>
+                <Input type="text" name="email" placeholder="E-Mail" color={emailCriteria ? "white" : "lightcoral"} onChange={e => setEmailCriteria(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.target.value))}/>
+                <br/>
                 <h3>User Info</h3>
                 <Input type="text" name="username" placeholder="Username"/>
-                <Input type={showPassword ? "text" : "password"} name="password" placeholder="Password" onchange={onFormChange}/>
-                <Input type={showPassword ? "text" : "password"} name="confpassword" placeholder="Confirm Password" onchange={onFormChange}/>
-                <Checkbox name="showPassword" label="Show Password" onChange={e => setShowPassword(e.target.checked)}/>
+                <Input type={showPassword ? "text" : "password"} name="password" placeholder="Password" color={passCriteria ? "white" : "lightcoral"} onBlur={onPasswordChange}/>
+                <Input type={showPassword ? "text" : "password"} name="confpassword" placeholder="Confirm Password" color={passCriteria ? "white" : "lightcoral"}  onBlur={onConfPasswordChange}/>
+                <Checkbox name="showPassword" label="Show Password" onChange={e => setShowPassword(e.target.checked) }/>
+                <br/>
+                <h3>Location</h3>
+                <Input type="text" name="zipcode" placeholder="Zip Code" pattern="[0-9]*" />
                 <br/>
                 <span>
                     <Button size='medium' type='submit'>

@@ -36,7 +36,9 @@ export default (sequelize, DataTypes) => {
       },
       location: DataTypes.STRING,
       restaurant: { type: DataTypes.BOOLEAN, default: false },
-      admin: { type: DataTypes.BOOLEAN, default: false }
+      admin: { type: DataTypes.BOOLEAN, default: false },
+      deleted: { type: DataTypes.BOOLEAN, default: false },
+      deletedBy: DataTypes.INTEGER
     },
     {}
   );

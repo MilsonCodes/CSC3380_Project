@@ -20,12 +20,14 @@ class Specials {
       })
     );
   }
+
   static getAll(req, res) {
     const specials = Special.findAll({ where: { deleted: false } });
     return specials.then(specials =>
       res.status(201).send({ message: "All Specials: ", specials })
     );
   }
+
   static getAllActive(req, res) {
     const specials = Special.findAll({
       where: { deleted: false, isActive: true }
@@ -34,6 +36,7 @@ class Specials {
       res.status(201).send({ message: "All Specials: ", specials })
     );
   }
+
   static modify(req, res) {
     const { name, description, isActive, startDate, endDate } = req.body;
     return Special.findById(req.params.specialId)
@@ -62,6 +65,7 @@ class Specials {
       })
       .catch(error => res.status(400).send(error));
   }
+
   static delete(req, res) {
     return Special.findById(req.params.specialId)
       .then(special => {

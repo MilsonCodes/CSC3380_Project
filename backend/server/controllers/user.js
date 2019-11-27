@@ -29,18 +29,21 @@ class Users {
         .send({ success: true, message: "User successfully created", userData })
     );
   }
+
   static getAll(req, res) {
     const users = User.findAll();
     return users.then(users =>
       res.status(200).send({ message: "All Users: ", users })
     );
   }
+
   static getRestaurants(req, res) {
     const restaurants = User.findAll({ where: { restaurant: true } });
     return restaurants.then(restaurants =>
       res.status(200).send({ message: "All Restaurants: ", restaurants })
     );
   }
+
   static modify(req, res) {
     const {
       name,
@@ -81,6 +84,7 @@ class Users {
       })
       .catch(error => res.status(400).send(error));
   }
+
   static delete(req, res) {
     const user = User.findById(req.params.userId);
     return user

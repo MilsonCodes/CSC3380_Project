@@ -13,8 +13,9 @@ class Users {
       location,
       restaurant,
       admin
-    } = req.body;
+    } = req.body; // Get fields from request body
     return User.create({
+      // Create user based on fields
       name,
       username,
       email,
@@ -29,18 +30,24 @@ class Users {
         .send({ success: true, message: "User successfully created", userData })
     );
   }
+
   static getAll(req, res) {
-    const users = User.findAll();
-    return users.then(users =>
-      res.status(200).send({ message: "All Users: ", users })
+    const users = User.findAll({ where: { deleted: false } }); // Find all users that aren't deleted
+    return users.then(
+      users => res.status(200).send({ message: "All Users: ", users }) // Return the users
     );
   }
+
   static getRestaurants(req, res) {
-    const restaurants = User.findAll({ where: { restaurant: true } });
-    return restaurants.then(restaurants =>
-      res.status(200).send({ message: "All Restaurants: ", restaurants })
-    );
+    const restaurants = User.findAll({
+      // Find all restaurant users that haven't been deleted
+      where: { restaurant: true, deleted: false }
+    });
+    return restaurants.then((
+      restaurants // Return the list of restaurants
+    ) => res.status(200).send({ message: "All Restaurants: ", restaurants }));
   }
+
   static modify(req, res) {
     const {
       name,
@@ -50,9 +57,10 @@ class Users {
       location,
       restaurant,
       admin
-    } = req.body;
-    return User.findById(req.params.userId)
+    } = req.body; // Get the fields from the request body
+    return User.findById(req.params.userId) // Find the user to update
       .then(user => {
+        // Update user or use old values
         user
           .update({
             name: name || user.name,
@@ -81,15 +89,22 @@ class Users {
       })
       .catch(error => res.status(400).send(error));
   }
+
   static delete(req, res) {
-    const user = User.findById(req.params.userId);
+    const user = User.findById(req.params.userId); // Find user that is being deleted
+    const deleter = User.findById(req.params.deleterId); // Find user that is deleting the account
     return user
       .then(user => {
         if (!user) {
+          // Check if user exists
           return res.status(400).send({ message: "User not found" });
-        }
-        return special
-          .update({ deleted: true, deletedBy: req.params.userId })
+        } else if (!deleter.admin)
+          // Check if the deleter is an admin
+          return res
+            .status(400)
+            .send({ message: "Must be an admin to delete a user" });
+        return user // Return the user being deleted
+          .update({ deleted: true, deletedBy: deleter.id }) // Mark the account as deleted and update who deleted it
           .then(() =>
             res.status(200).send({ message: "User successfully deleted!" })
           )

@@ -9,7 +9,6 @@ class Users {
       username,
       email,
       password,
-      favorites,
       location,
       restaurant,
       admin
@@ -20,7 +19,6 @@ class Users {
       username,
       email,
       password,
-      favorites,
       location,
       restaurant,
       admin

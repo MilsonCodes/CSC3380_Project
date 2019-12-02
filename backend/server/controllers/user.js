@@ -1,6 +1,7 @@
 import model from "../models";
 
 const { User } = model;
+const { Special } = model.Special;
 
 class Users {
   static signUp(req, res) {
@@ -56,7 +57,7 @@ class Users {
       restaurant,
       admin
     } = req.body; // Get the fields from the request body
-    return User.findById(req.params.userId) // Find the user to update
+    return User.findByPk(req.params.userId) // Find the user to update
       .then(user => {
         // Update user or use old values
         user
@@ -89,8 +90,8 @@ class Users {
   }
 
   static delete(req, res) {
-    const user = User.findById(req.params.userId); // Find user that is being deleted
-    const deleter = User.findById(req.params.deleterId); // Find user that is deleting the account
+    const user = User.findByPk(req.params.userId); // Find user that is being deleted
+    const deleter = User.findByPk(req.params.deleterId); // Find user that is deleting the account
     return user
       .then(user => {
         if (!user) {
@@ -106,6 +107,51 @@ class Users {
           .then(() =>
             res.status(200).send({ message: "User successfully deleted!" })
           )
+          .catch(error => res.status(400).send(error));
+      })
+      .catch(error => res.status(400).send(error));
+  }
+
+  static favorite(req, res) {
+    const user = User.findByPk(req.params.userId); // Find user by ID
+    const iD = req.params.specialId; // Save special ID to use
+    return user
+      .then(user => {
+        if (!user)
+          // Check user exists
+          return res.status(400).send({ message: "User not found" });
+        return user
+          .update({
+            // Add the special ID to the list of favorites
+            favorites: sequelize.fn(
+              "array_append",
+              sequelize.col("favorites"),
+              iD
+            )
+          })
+          .then(() =>
+            res.status(200).send({
+              message: "Special added to favorites: ",
+              data: Special.findByPk(iD)
+            })
+          )
+          .catch(error => res.status(400).send(error));
+      })
+      .catch(error => res.status(400).send(error));
+  }
+
+  static getFavorites(req, res) {
+    const user = User.findByPk(req.params.userId); // Get user from request parameters
+    const favs = user.favorites; // Store list of favorites
+    if (!favs)
+      // Check favs exists
+      return res.status(400).send({ message: "No favorites found" });
+    return favs
+      .then(favs => {
+        return favs
+          .then(() => {
+            res.status(200).send({ message: "Favorites: ", data: favs });
+          })
           .catch(error => res.status(400).send(error));
       })
       .catch(error => res.status(400).send(error));

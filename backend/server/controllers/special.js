@@ -42,7 +42,7 @@ class Specials {
 
   static modify(req, res) {
     const { name, description, isActive, startDate, endDate } = req.body; // Get the information from the body of the request
-    return Special.findById(req.params.specialId) // Find the special attempting to be changed
+    return Special.findByPk(req.params.specialId) // Find the special attempting to be changed
       .then(special => {
         // Update special with new values or keep old values
         special
@@ -72,7 +72,7 @@ class Specials {
   }
 
   static delete(req, res) {
-    return Special.findById(req.params.specialId) // Find requested special
+    return Special.findByPk(req.params.specialId) // Find requested special
       .then(special => {
         if (!special) {
           // Handle special not found

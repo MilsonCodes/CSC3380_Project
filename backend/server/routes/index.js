@@ -13,6 +13,8 @@ export default app => {
   app.get("/api/restaurants", Users.getRestaurants); // Route for getting all restaurants
   app.put("/api/users/:userId", Users.modify); // Route for editing a user
   app.delete("/api/users/:userId/:deleterId", Users.delete); // Route for deleting a user
+  app.post("/api/favorite/:specialId/:userId", Users.favorite); // Route for favoriting a special
+  app.get("/api/favorites/:userId", Users.getFavorites); // Route for getting the favorites list
 
   app.post("/api/users/:userId/special", Specials.create); // Route for user to create a special
   app.get("/api/allSpecials", Specials.getAll); // Route for showing all specials

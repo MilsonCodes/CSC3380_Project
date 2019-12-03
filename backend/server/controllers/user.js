@@ -143,9 +143,13 @@ class Users {
   static getFavorites(req, res) {
     const user = User.findByPk(req.params.userId); // Get user from request parameters
     const favs = user.favorites; // Store list of favorites
-    if (!favs)
+    if (!favs) {
       // Check favs exists
+      if (!user)
+        // Check user exists
+        return res.status(400).send({ message: "Invalid User" });
       return res.status(400).send({ message: "No favorites found" });
+    }
     return favs
       .then(favs => {
         return favs

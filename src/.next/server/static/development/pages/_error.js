@@ -327,7 +327,12 @@ function unique() {
       if (keys.has(h.key)) return false;
       keys.add(h.key);
       return true;
-    }
+    } // If custom meta tag has been added the key will be prepended with `.$`, we can
+    // check for this and dedupe in favor of the custom one, so the default
+    // is not rendered as well
+
+
+    if (keys.has(`.$${h.key}`)) return false;
 
     switch (h.type) {
       case 'title':
@@ -492,7 +497,7 @@ var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 
 var _head = _interopRequireDefault(__webpack_require__(/*! ../next-server/lib/head */ "./node_modules/next/dist/next-server/lib/head.js"));
 
-const statusCodes = {
+var statusCodes = {
   400: 'Bad Request',
   404: 'This page could not be found',
   405: 'Method Not Allowed',
@@ -504,21 +509,21 @@ const statusCodes = {
 
 class Error extends _react.default.Component {
   static getInitialProps(_ref) {
-    let {
+    var {
       res,
       err
     } = _ref;
-    const statusCode = res && res.statusCode ? res.statusCode : err ? err.statusCode : 404;
+    var statusCode = res && res.statusCode ? res.statusCode : err ? err.statusCode : 404;
     return {
       statusCode
     };
   }
 
   render() {
-    const {
+    var {
       statusCode
     } = this.props;
-    const title = this.props.title || statusCodes[statusCode] || 'An unexpected error has occurred';
+    var title = this.props.title || statusCodes[statusCode] || 'An unexpected error has occurred';
     return _react.default.createElement("div", {
       style: styles.error
     }, _react.default.createElement(_head.default, null, _react.default.createElement("title", null, statusCode, ": ", title)), _react.default.createElement("div", null, _react.default.createElement("style", {
@@ -538,7 +543,7 @@ class Error extends _react.default.Component {
 
 exports.default = Error;
 Error.displayName = 'ErrorPage';
-const styles = {
+var styles = {
   error: {
     color: '#000',
     background: '#fff',

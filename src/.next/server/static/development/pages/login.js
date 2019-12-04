@@ -88,10 +88,575 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./components/Button/index.js":
+/*!************************************!*\
+  !*** ./components/Button/index.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! polished */ "polished");
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(polished__WEBPACK_IMPORTED_MODULE_4__);
+
+var _jsxFileName = "/home/m/CSC3380_Project/src/components/Button/index.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+
+const StyledButton = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.button`
+  border-radius: 50px;
+  border: ${props => "solid 2px " + props.theme.secondary};
+  background: ${props => props.theme.button};
+  color: ${props => props.theme.text | "black"};
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+  height: ${props => props.height ? props.height : "auto"};
+  width: ${props => props.size === "small" ? props.height ? props.height : "45px" : props.size === "medium" ? "100px" : props.size === "large" ? "200px" : "15%"};
+  outline: none;
+  transition: all ease 0.25s;
+  cursor: pointer;
+  margin: 10px;
+  display: ${props => props.icon && !props.label ? "flex" : "block"};
+  font-size: ${p => p.icon && !p.label ? "35px" : "15px"};
+  :hover {
+    background: ${p => Object(polished__WEBPACK_IMPORTED_MODULE_4__["darken"])(0.2, p.theme.button)};
+    border: solid 2px ${props => Object(polished__WEBPACK_IMPORTED_MODULE_4__["darken"])(0.2, props.theme.secondary)};
+`;
+
+const Button = props => {
+  return __jsx(StyledButton, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: undefined
+  }), props.children);
+};
+
+Button.propTypes = {
+  /**
+   * Icon to be displayed in the button
+   */
+  icon: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.element,
+
+  /**
+   * Label on the button
+   */
+  label: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+
+  /**
+   * The height of the button, can be percentage or number of pixels
+   */
+  height: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+
+  /**
+   * This is related to the width of the button
+   */
+  size: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.oneOf(["small", "medium", "large", null])
+};
+/* harmony default export */ __webpack_exports__["default"] = (Button);
+
+/***/ }),
+
+/***/ "./components/Form/checkbox.js":
+/*!*************************************!*\
+  !*** ./components/Form/checkbox.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+
+var _jsxFileName = "/home/m/CSC3380_Project/src/components/Form/checkbox.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+ //TODO: CSS this checkbox
+
+let StyledCheckbox = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.input`
+    
+`; //TODO: CSS this label
+
+let Label = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.label`
+
+`;
+
+const Checkbox = props => {
+  return __jsx(Label, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: undefined
+  }, __jsx(StyledCheckbox, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    type: "checkbox"
+  }, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: undefined
+  }), props.children), props.label);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Checkbox);
+
+/***/ }),
+
+/***/ "./components/Form/index.js":
+/*!**********************************!*\
+  !*** ./components/Form/index.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Button */ "./components/Button/index.js");
+/* harmony import */ var _input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./input */ "./components/Form/input.js");
+/* harmony import */ var _checkbox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./checkbox */ "./components/Form/checkbox.js");
+/* harmony import */ var _Link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Link */ "./components/Link/index.js");
+var _jsxFileName = "/home/m/CSC3380_Project/src/components/Form/index.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+const Forms = {}; //TODO: Adjust div for form
+
+let FormDiv = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  width: 25%;
+  margin: 0 auto;
+  padding-bottom: 100px;
+`;
+let Form = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.form`
+  border: none;
+  span {
+    float: right;
+  }
+`;
+/**
+ * TODO:
+ *  - Adjust CSS
+ *  - Validate and handle login data
+ */
+
+Forms.LoginForm = props => {
+  const {
+    0: showPassword,
+    1: setShowPassword
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const data = new FormData(event.target); //Data is ready to route
+  }
+
+  return __jsx(FormDiv, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
+    },
+    __self: undefined
+  }, __jsx("h2", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: undefined
+  }, "Login"), __jsx(Form, {
+    onSubmit: handleSubmit,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: undefined
+  }, __jsx(_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    type: "text",
+    name: "username",
+    placeholder: "Username",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    },
+    __self: undefined
+  }), __jsx(_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    type: showPassword ? "text" : "password",
+    name: "password",
+    placeholder: "Password",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44
+    },
+    __self: undefined
+  }), __jsx(_checkbox__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    name: "showPassword",
+    label: "Show Password",
+    onChange: e => setShowPassword(e.target.checked),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
+    },
+    __self: undefined
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: undefined
+  }), __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: undefined
+  }, __jsx(_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    size: "medium",
+    type: "submit",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: undefined
+  }, "Login"))), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61
+    },
+    __self: undefined
+  }), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    to: "/register",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62
+    },
+    __self: undefined
+  }, __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63
+    },
+    __self: undefined
+  }, "Register Here")));
+};
+/**
+ * TODO:
+ *  - Adjust CSS
+ *  - Validate and handle registration data
+ */
+
+
+Forms.RegisterForm = props => {
+  const {
+    0: showPassword,
+    1: setShowPassword
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: emailCriteria,
+    1: setEmailCriteria
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true);
+  const {
+    0: passCriteria,
+    1: setPassCriteria
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true);
+  const {
+    0: mainPass,
+    1: setMainPassword
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
+  const {
+    0: confPass,
+    1: setConfirmPassword
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
+  const {
+    0: ownRestaurant,
+    1: setOwnRestaurant
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+
+  const onPasswordChange = e => {
+    setMainPassword(e.target.value);
+    setPassCriteria(mainPass === confPass && mainPass.length >= 8);
+  };
+
+  const onConfPasswordChange = e => {
+    setConfirmPassword(e.target.value);
+    setPassCriteria(mainPass === confPass && mainPass.length >= 8);
+  };
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+
+    if (emailCriteria && passCriteria) {//Data is ready to route
+    }
+  }
+
+  return __jsx(FormDiv, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 104
+    },
+    __self: undefined
+  }, __jsx("h2", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 105
+    },
+    __self: undefined
+  }, "Register"), __jsx(Form, {
+    onSubmit: handleSubmit,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 106
+    },
+    __self: undefined
+  }, __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 107
+    },
+    __self: undefined
+  }, "Restaurant"), __jsx(_checkbox__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    name: "ownRestaurant",
+    label: "Do you own a Restaurant?",
+    onChange: e => setOwnRestaurant(e.target.checked),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 108
+    },
+    __self: undefined
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 113
+    },
+    __self: undefined
+  }), __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 114
+    },
+    __self: undefined
+  }, ownRestaurant ? "Business" : "Personal", " Info"), __jsx(_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    type: "text",
+    name: "name",
+    placeholder: ownRestaurant ? "Restaurant Name" : "Name",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 115
+    },
+    __self: undefined
+  }), __jsx(_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    type: "text",
+    name: "email",
+    placeholder: "E-Mail",
+    color: emailCriteria ? "white" : "lightcoral",
+    onChange: e => setEmailCriteria(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.target.value)),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 120
+    },
+    __self: undefined
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 133
+    },
+    __self: undefined
+  }), __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 134
+    },
+    __self: undefined
+  }, "User Info"), __jsx(_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    type: "text",
+    name: "username",
+    placeholder: "Username",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 135
+    },
+    __self: undefined
+  }), __jsx(_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    type: showPassword ? "text" : "password",
+    name: "password",
+    placeholder: "Password",
+    color: passCriteria ? "white" : "lightcoral",
+    onBlur: onPasswordChange,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 136
+    },
+    __self: undefined
+  }), __jsx(_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    type: showPassword ? "text" : "password",
+    name: "confpassword",
+    placeholder: "Confirm Password",
+    color: passCriteria ? "white" : "lightcoral",
+    onBlur: onConfPasswordChange,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 143
+    },
+    __self: undefined
+  }), __jsx(_checkbox__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    name: "showPassword",
+    label: "Show Password",
+    onChange: e => setShowPassword(e.target.checked),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 150
+    },
+    __self: undefined
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 155
+    },
+    __self: undefined
+  }), __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 156
+    },
+    __self: undefined
+  }, "Location"), __jsx(_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    type: "text",
+    name: "zipcode",
+    placeholder: "Zip Code",
+    pattern: "[0-9]*",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 157
+    },
+    __self: undefined
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 163
+    },
+    __self: undefined
+  }), __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 164
+    },
+    __self: undefined
+  }, __jsx(_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    size: "medium",
+    type: "submit",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 165
+    },
+    __self: undefined
+  }, "Register"))), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 170
+    },
+    __self: undefined
+  }), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    to: "/login",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 171
+    },
+    __self: undefined
+  }, __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 172
+    },
+    __self: undefined
+  }, "Login Here")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Forms);
+
+/***/ }),
+
+/***/ "./components/Form/input.js":
+/*!**********************************!*\
+  !*** ./components/Form/input.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! polished */ "polished");
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(polished__WEBPACK_IMPORTED_MODULE_3__);
+
+var _jsxFileName = "/home/m/CSC3380_Project/src/components/Form/input.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+let StyledInput = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.input`
+width: 95%;
+border-radius: 30px;
+border: none;
+box-shadow: 0 0 10px 0 ${p => Object(polished__WEBPACK_IMPORTED_MODULE_3__["lighten"])(0.2, p.theme.secondary)};
+min-height: ${p => p.height};
+background-color: ${p => p.color};
+margin: 5px;
+padding: 5px;
+outline: none;
+transition: all ease 0.5s;
+font-family: "Montserrat", sans-serif;
+&::placeholder {
+    opacity: 0.4;
+    input:focus ~ &,
+    &.filled {
+        display: none;
+    }
+}
+`;
+
+const Input = props => {
+  return __jsx(StyledInput, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: undefined
+  }), props.children);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Input);
+
+/***/ }),
 
 /***/ "./components/Link/index.js":
 /*!**********************************!*\
@@ -112,7 +677,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! polished */ "polished");
 /* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(polished__WEBPACK_IMPORTED_MODULE_4__);
 
-var _jsxFileName = "C:\\Users\\bsimp\\Documents\\GitHub\\CSC3380_Project\\src\\components\\Link\\index.js";
+var _jsxFileName = "/home/m/CSC3380_Project/src/components/Link/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
@@ -234,6 +799,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/promise */ "core-js/
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/weak-map.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/weak-map.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/weak-map */ "core-js/library/fn/weak-map");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js":
 /*!********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js ***!
@@ -326,29 +902,55 @@ var _Object$getOwnPropertyDescriptor = __webpack_require__(/*! ../core-js/object
 
 var _Object$defineProperty = __webpack_require__(/*! ../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
 
+var _WeakMap = __webpack_require__(/*! ../core-js/weak-map */ "./node_modules/@babel/runtime-corejs2/core-js/weak-map.js");
+
+function _getRequireWildcardCache() {
+  if (typeof _WeakMap !== "function") return null;
+  var cache = new _WeakMap();
+
+  _getRequireWildcardCache = function _getRequireWildcardCache() {
+    return cache;
+  };
+
+  return cache;
+}
+
 function _interopRequireWildcard(obj) {
   if (obj && obj.__esModule) {
     return obj;
-  } else {
-    var newObj = {};
+  }
 
-    if (obj != null) {
-      for (var key in obj) {
-        if (Object.prototype.hasOwnProperty.call(obj, key)) {
-          var desc = _Object$defineProperty && _Object$getOwnPropertyDescriptor ? _Object$getOwnPropertyDescriptor(obj, key) : {};
+  var cache = _getRequireWildcardCache();
 
-          if (desc.get || desc.set) {
-            _Object$defineProperty(newObj, key, desc);
-          } else {
-            newObj[key] = obj[key];
-          }
+  if (cache && cache.has(obj)) {
+    return cache.get(obj);
+  }
+
+  var newObj = {};
+
+  if (obj != null) {
+    var hasPropertyDescriptor = _Object$defineProperty && _Object$getOwnPropertyDescriptor;
+
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? _Object$getOwnPropertyDescriptor(obj, key) : null;
+
+        if (desc && (desc.get || desc.set)) {
+          _Object$defineProperty(newObj, key, desc);
+        } else {
+          newObj[key] = obj[key];
         }
       }
     }
-
-    newObj["default"] = obj;
-    return newObj;
   }
+
+  newObj["default"] = obj;
+
+  if (cache) {
+    cache.set(obj, newObj);
+  }
+
+  return newObj;
 }
 
 module.exports = _interopRequireWildcard;
@@ -389,21 +991,21 @@ var _utils = __webpack_require__(/*! ../next-server/lib/utils */ "./node_modules
 
 
 function isLocal(href) {
-  const url = (0, _url.parse)(href, false, true);
-  const origin = (0, _url.parse)((0, _utils.getLocationOrigin)(), false, true);
+  var url = (0, _url.parse)(href, false, true);
+  var origin = (0, _url.parse)((0, _utils.getLocationOrigin)(), false, true);
   return !url.host || url.protocol === origin.protocol && url.host === origin.host;
 }
 
 function memoizedFormatUrl(formatFunc) {
-  let lastHref = null;
-  let lastAs = null;
-  let lastResult = null;
+  var lastHref = null;
+  var lastAs = null;
+  var lastResult = null;
   return (href, as) => {
     if (lastResult && href === lastHref && as === lastAs) {
       return lastResult;
     }
 
-    const result = formatFunc(href, as);
+    var result = formatFunc(href, as);
     lastHref = href;
     lastAs = as;
     lastResult = result;
@@ -415,9 +1017,9 @@ function formatUrl(url) {
   return url && typeof url === 'object' ? (0, _utils.formatWithValidation)(url) : url;
 }
 
-let observer;
-const listeners = new _map.default();
-const IntersectionObserver = false ? undefined : null;
+var observer;
+var listeners = new _map.default();
+var IntersectionObserver = false ? undefined : null;
 
 function getObserver() {
   // Return shared instance of IntersectionObserver if already created
@@ -436,7 +1038,7 @@ function getObserver() {
         return;
       }
 
-      const cb = listeners.get(entry.target);
+      var cb = listeners.get(entry.target);
 
       if (entry.isIntersecting || entry.intersectionRatio > 0) {
         observer.unobserve(entry.target);
@@ -449,8 +1051,8 @@ function getObserver() {
   });
 }
 
-const listenToIntersections = (el, cb) => {
-  const observer = getObserver();
+var listenToIntersections = (el, cb) => {
+  var observer = getObserver();
 
   if (!observer) {
     return () => {};
@@ -485,7 +1087,7 @@ class Link extends _react.Component {
 
     this.linkClicked = e => {
       // @ts-ignore target exists on currentTarget
-      const {
+      var {
         nodeName,
         target
       } = e.currentTarget;
@@ -495,7 +1097,7 @@ class Link extends _react.Component {
         return;
       }
 
-      let {
+      var {
         href,
         as
       } = this.formatUrls(this.props.href, this.props.as);
@@ -505,14 +1107,14 @@ class Link extends _react.Component {
         return;
       }
 
-      const {
+      var {
         pathname
       } = window.location;
       href = (0, _url.resolve)(pathname, href);
       as = as ? (0, _url.resolve)(pathname, as) : href;
       e.preventDefault(); //  avoid scroll for urls with anchor refs
 
-      let {
+      var {
         scroll
       } = this.props;
 
@@ -560,22 +1162,22 @@ class Link extends _react.Component {
   prefetch() {
     if (!this.p || true) return; // Prefetch the JSON page if asked (only in the client)
 
-    const {
+    var {
       pathname
     } = window.location;
-    const {
+    var {
       href: parsedHref
     } = this.formatUrls(this.props.href, this.props.as);
-    const href = (0, _url.resolve)(pathname, parsedHref);
+    var href = (0, _url.resolve)(pathname, parsedHref);
 
     _router.default.prefetch(href);
   }
 
   render() {
-    let {
+    var {
       children
     } = this.props;
-    const {
+    var {
       href,
       as
     } = this.formatUrls(this.props.href, this.props.as); // Deprecated. Warning shown by propType check. If the children provided is a string (<Link>example</Link>) we wrap it in an <a> tag
@@ -585,9 +1187,9 @@ class Link extends _react.Component {
     } // This will return the first child, if multiple are provided it will throw an error
 
 
-    const child = _react.Children.only(children);
+    var child = _react.Children.only(children);
 
-    const props = {
+    var props = {
       ref: el => {
         this.handleRef(el);
 
@@ -612,10 +1214,9 @@ class Link extends _react.Component {
         if (!e.defaultPrevented) {
           this.linkClicked(e);
         }
-      } // If child is an <a> tag and doesn't have a href attribute, or if the 'passHref' property is
-      // defined, we specify the current 'href', so that repetition is not needed by the user
-
-    };
+      }
+    }; // If child is an <a> tag and doesn't have a href attribute, or if the 'passHref' property is
+    // defined, we specify the current 'href', so that repetition is not needed by the user
 
     if (this.props.passHref || child.type === 'a' && !('href' in child.props)) {
       props.href = as || href;
@@ -633,9 +1234,9 @@ class Link extends _react.Component {
 Link.propTypes = void 0;
 
 if (true) {
-  const warn = (0, _utils.execOnce)(console.error); // This module gets removed by webpack.IgnorePlugin
+  var warn = (0, _utils.execOnce)(console.error); // This module gets removed by webpack.IgnorePlugin
 
-  const exact = __webpack_require__(/*! prop-types-exact */ "prop-types-exact");
+  var exact = __webpack_require__(/*! prop-types-exact */ "prop-types-exact");
 
   Link.propTypes = exact({
     href: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.object]).isRequired,
@@ -646,7 +1247,7 @@ if (true) {
     passHref: _propTypes.default.bool,
     scroll: _propTypes.default.bool,
     children: _propTypes.default.oneOfType([_propTypes.default.element, (props, propName) => {
-      const value = props[propName];
+      var value = props[propName];
 
       if (typeof value === 'string') {
         warn("Warning: You're using a string directly inside <Link>. This usage has been deprecated. Please add an <a> tag as child of <Link>");
@@ -694,12 +1295,14 @@ exports.NextRouter = _router2.NextRouter;
 
 var _routerContext = __webpack_require__(/*! ../next-server/lib/router-context */ "./node_modules/next/dist/next-server/lib/router-context.js");
 
+exports.RouterContext = _routerContext.RouterContext;
+
 var _withRouter = _interopRequireDefault(__webpack_require__(/*! ./with-router */ "./node_modules/next/dist/client/with-router.js"));
 
 exports.withRouter = _withRouter.default;
 /* global window */
 
-const singletonRouter = {
+var singletonRouter = {
   router: null,
   // holds the actual router instance
   readyCallbacks: [],
@@ -712,9 +1315,9 @@ const singletonRouter = {
 
 }; // Create public properties and methods of the router in the singletonRouter
 
-const urlPropertyFields = ['pathname', 'route', 'query', 'asPath', 'components'];
-const routerEvents = ['routeChangeStart', 'beforeHistoryChange', 'routeChangeComplete', 'routeChangeError', 'hashChangeStart', 'hashChangeComplete'];
-const coreMethodFields = ['push', 'replace', 'reload', 'back', 'prefetch', 'beforePopState']; // Events is a static property on the router, the router doesn't have to be initialized to use it
+var urlPropertyFields = ['pathname', 'route', 'query', 'asPath', 'components'];
+var routerEvents = ['routeChangeStart', 'beforeHistoryChange', 'routeChangeComplete', 'routeChangeError', 'hashChangeStart', 'hashChangeComplete'];
+var coreMethodFields = ['push', 'replace', 'reload', 'back', 'prefetch', 'beforePopState']; // Events is a static property on the router, the router doesn't have to be initialized to use it
 
 (0, _defineProperty.default)(singletonRouter, 'events', {
   get() {
@@ -729,7 +1332,7 @@ urlPropertyFields.forEach(field => {
   // proper way to access it
   (0, _defineProperty.default)(singletonRouter, field, {
     get() {
-      const router = getRouter();
+      var router = getRouter();
       return router[field];
     }
 
@@ -740,15 +1343,15 @@ coreMethodFields.forEach(field => {
   ;
 
   singletonRouter[field] = function () {
-    const router = getRouter();
+    var router = getRouter();
     return router[field](...arguments);
   };
 });
 routerEvents.forEach(event => {
   singletonRouter.ready(() => {
     _router2.default.events.on(event, function () {
-      const eventField = "on" + event.charAt(0).toUpperCase() + event.substring(1);
-      const _singletonRouter = singletonRouter;
+      var eventField = "on" + event.charAt(0).toUpperCase() + event.substring(1);
+      var _singletonRouter = singletonRouter;
 
       if (_singletonRouter[eventField]) {
         try {
@@ -766,7 +1369,7 @@ routerEvents.forEach(event => {
 
 function getRouter() {
   if (!singletonRouter.router) {
-    const message = 'No router instance found.\n' + 'You should only use "next/router" inside the client side of your app.\n';
+    var message = 'No router instance found.\n' + 'You should only use "next/router" inside the client side of your app.\n';
     throw new Error(message);
   }
 
@@ -788,7 +1391,7 @@ function useRouter() {
 // This should **not** use inside the server.
 
 
-const createRouter = function createRouter() {
+var createRouter = function createRouter() {
   for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
     args[_key] = arguments[_key];
   }
@@ -803,10 +1406,10 @@ const createRouter = function createRouter() {
 exports.createRouter = createRouter;
 
 function makePublicRouterInstance(router) {
-  const _router = router;
-  const instance = {};
+  var _router = router;
+  var instance = {};
 
-  for (const property of urlPropertyFields) {
+  for (var property of urlPropertyFields) {
     if (typeof _router[property] === 'object') {
       instance[property] = (0, _extends2.default)({}, _router[property]); // makes sure query is not stateful
 
@@ -847,7 +1450,7 @@ var _extends2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-co
 
 var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 
-var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "prop-types"));
+var _router = __webpack_require__(/*! ./router */ "./node_modules/next/dist/client/router.js");
 
 function withRouter(ComposedComponent) {
   class WithRouteWrapper extends _react.default.Component {
@@ -858,7 +1461,7 @@ function withRouter(ComposedComponent) {
 
     render() {
       return _react.default.createElement(ComposedComponent, (0, _extends2.default)({
-        router: this.context.router
+        router: this.context
       }, this.props));
     }
 
@@ -866,13 +1469,13 @@ function withRouter(ComposedComponent) {
 
   WithRouteWrapper.displayName = void 0;
   WithRouteWrapper.getInitialProps = void 0;
-  WithRouteWrapper.contextTypes = {
-    router: _propTypes.default.object
-  };
-  WithRouteWrapper.getInitialProps = ComposedComponent.getInitialProps;
+  WithRouteWrapper.contextType = _router.RouterContext;
+  WithRouteWrapper.getInitialProps = ComposedComponent.getInitialProps // This is needed to allow checking for custom getInitialProps in _app
+  ;
+  WithRouteWrapper.origGetInitialProps = ComposedComponent.origGetInitialProps;
 
   if (true) {
-    const name = ComposedComponent.displayName || ComposedComponent.name || 'Unknown';
+    var name = ComposedComponent.displayName || ComposedComponent.name || 'Unknown';
     WithRouteWrapper.displayName = "withRouter(" + name + ")";
   }
 
@@ -1271,7 +1874,12 @@ class Router {
         const routeMatch = route_matcher_1.getRouteMatcher(rr)(asPathname);
 
         if (!routeMatch) {
-          console.error('The provided `as` value is incompatible with the `href` value. This is invalid. https://err.sh/zeit/next.js/incompatible-href-as');
+          const error = 'The provided `as` value is incompatible with the `href` value. This is invalid. https://err.sh/zeit/next.js/incompatible-href-as';
+
+          if (true) {
+            throw new Error(error);
+          } else {}
+
           return resolve(false);
         } // Merge params into `query`, overwriting any specified in search
 
@@ -1567,31 +2175,24 @@ class Router {
 
     if ( // @ts-ignore workaround for dead-code elimination
     (self.__HAS_SPR || "development" !== 'production') && Component.__NEXT_SPR) {
-      let status;
-      const url = ctx.asPath ? ctx.asPath : url_1.format({
-        pathname: ctx.pathname,
-        query: ctx.query
-      });
-      props = await fetch(url, {
-        headers: {
-          'content-type': 'application/json'
-        }
-      }).then(res => {
+      let status; // pathname should have leading slash
+
+      let {
+        pathname
+      } = url_1.parse(ctx.asPath || ctx.pathname);
+      pathname = !pathname || pathname === '/' ? '/index' : pathname;
+      props = await fetch( // @ts-ignore __NEXT_DATA__
+      `/_next/data/${__NEXT_DATA__.buildId}${pathname}.json`).then(res => {
         if (!res.ok) {
           status = res.status;
           throw new Error('failed to load prerender data');
         }
 
         return res.json();
-      }).then(pageProps => {
-        return {
-          pageProps
-        };
       }).catch(err => {
-        return {
-          error: err.message,
-          status
-        };
+        console.error(`Failed to load data`, status, err);
+        window.location.href = pathname;
+        return new _Promise(() => {});
       });
     } else {
       const AppTree = this._wrapApp(App);
@@ -1844,7 +2445,7 @@ async function loadGetInitialProps(Component, ctx) {
 
   if (true) {
     if (_Object$keys(props).length === 0 && !ctx.ctx) {
-      console.warn(`${getDisplayName(Component)} returned an empty object from \`getInitialProps\`. This de-optimizes and prevents automatic prerendering. https://err.sh/zeit/next.js/empty-object-getInitialProps`);
+      console.warn(`${getDisplayName(Component)} returned an empty object from \`getInitialProps\`. This de-optimizes and prevents automatic static optimization. https://err.sh/zeit/next.js/empty-object-getInitialProps`);
     }
   }
 
@@ -1898,50 +2499,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Link */ "./components/Link/index.js");
-var _jsxFileName = "C:\\Users\\bsimp\\Documents\\GitHub\\CSC3380_Project\\src\\pages\\login.js";
+/* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Form */ "./components/Form/index.js");
+var _jsxFileName = "/home/m/CSC3380_Project/src/pages/login.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 const Login = () => __jsx("div", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 4
-  },
-  __self: undefined
-}, __jsx("h2", {
-  __source: {
-    fileName: _jsxFileName,
     lineNumber: 5
   },
   __self: undefined
-}, "Welcome to the Login Page!"), __jsx(_components_Link__WEBPACK_IMPORTED_MODULE_1__["default"], {
-  to: "/home",
+}, __jsx(_components_Form__WEBPACK_IMPORTED_MODULE_2__["default"].LoginForm, {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 6
   },
   __self: undefined
-}, __jsx("p", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 7
-  },
-  __self: undefined
-}, "Home Page")));
+}));
 
 /* harmony default export */ __webpack_exports__["default"] = (Login);
 
 /***/ }),
 
-/***/ 4:
+/***/ 6:
 /*!******************************!*\
   !*** multi ./pages/login.js ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\bsimp\Documents\GitHub\CSC3380_Project\src\pages\login.js */"./pages/login.js");
+module.exports = __webpack_require__(/*! /home/m/CSC3380_Project/src/pages/login.js */"./pages/login.js");
 
 
 /***/ }),
@@ -2020,6 +2610,17 @@ module.exports = require("core-js/library/fn/object/keys");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/promise");
+
+/***/ }),
+
+/***/ "core-js/library/fn/weak-map":
+/*!**********************************************!*\
+  !*** external "core-js/library/fn/weak-map" ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/weak-map");
 
 /***/ }),
 

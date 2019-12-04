@@ -1,0 +1,8 @@
+#Ignore frontend modules (for fast transfer)
+/src/node_modules
+
+#Ignore backend modules (for fast transfer)
+/backend/node_modules
+
+#Ignore compiled code
+/src/.next

@@ -1,10 +1,10 @@
 import LinkComp from '../components/Link';
 import Forms from '../components/Form';
 
-const Login = () => (
+const Register = () => (
 	<div>
-		<Forms.LoginForm />
+		<Forms.RegisterForm />
 	</div>
 );
 
-export default Login;
+export default Register;

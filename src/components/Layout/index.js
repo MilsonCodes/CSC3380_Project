@@ -20,7 +20,7 @@ const Background = styled.div`
   bottom: 0;
   left: 0;
   padding: 15px;
-  overflow: hidden;
+  ${"" /* overflow: hidden; */}
   font-family: "Montserrat", sans-serif;
 `;
 

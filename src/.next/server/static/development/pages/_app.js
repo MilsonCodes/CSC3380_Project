@@ -117,7 +117,8 @@ const THEME = {
   background: "#b0bec5",
   primary: "#ffd54f",
   secondary: "#4dd0e1",
-  button: "#e0f7fa"
+  button: "#e0f7fa",
+  white: "#f5f5f5"
 };
 /* harmony default export */ __webpack_exports__["default"] = (THEME);
 
@@ -722,17 +723,6 @@ module.exports = __webpack_require__(/*! core-js/library/fn/promise */ "core-js/
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/weak-map.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/weak-map.js ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/weak-map */ "core-js/library/fn/weak-map");
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js":
 /*!*************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js ***!
@@ -874,55 +864,29 @@ var _Object$getOwnPropertyDescriptor = __webpack_require__(/*! ../core-js/object
 
 var _Object$defineProperty = __webpack_require__(/*! ../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
 
-var _WeakMap = __webpack_require__(/*! ../core-js/weak-map */ "./node_modules/@babel/runtime-corejs2/core-js/weak-map.js");
-
-function _getRequireWildcardCache() {
-  if (typeof _WeakMap !== "function") return null;
-  var cache = new _WeakMap();
-
-  _getRequireWildcardCache = function _getRequireWildcardCache() {
-    return cache;
-  };
-
-  return cache;
-}
-
 function _interopRequireWildcard(obj) {
   if (obj && obj.__esModule) {
     return obj;
-  }
+  } else {
+    var newObj = {};
 
-  var cache = _getRequireWildcardCache();
+    if (obj != null) {
+      for (var key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+          var desc = _Object$defineProperty && _Object$getOwnPropertyDescriptor ? _Object$getOwnPropertyDescriptor(obj, key) : {};
 
-  if (cache && cache.has(obj)) {
-    return cache.get(obj);
-  }
-
-  var newObj = {};
-
-  if (obj != null) {
-    var hasPropertyDescriptor = _Object$defineProperty && _Object$getOwnPropertyDescriptor;
-
-    for (var key in obj) {
-      if (Object.prototype.hasOwnProperty.call(obj, key)) {
-        var desc = hasPropertyDescriptor ? _Object$getOwnPropertyDescriptor(obj, key) : null;
-
-        if (desc && (desc.get || desc.set)) {
-          _Object$defineProperty(newObj, key, desc);
-        } else {
-          newObj[key] = obj[key];
+          if (desc.get || desc.set) {
+            _Object$defineProperty(newObj, key, desc);
+          } else {
+            newObj[key] = obj[key];
+          }
         }
       }
     }
+
+    newObj["default"] = obj;
+    return newObj;
   }
-
-  newObj["default"] = obj;
-
-  if (cache) {
-    cache.set(obj, newObj);
-  }
-
-  return newObj;
 }
 
 module.exports = _interopRequireWildcard;
@@ -975,21 +939,21 @@ var _utils = __webpack_require__(/*! ../next-server/lib/utils */ "./node_modules
 
 
 function isLocal(href) {
-  var url = (0, _url.parse)(href, false, true);
-  var origin = (0, _url.parse)((0, _utils.getLocationOrigin)(), false, true);
+  const url = (0, _url.parse)(href, false, true);
+  const origin = (0, _url.parse)((0, _utils.getLocationOrigin)(), false, true);
   return !url.host || url.protocol === origin.protocol && url.host === origin.host;
 }
 
 function memoizedFormatUrl(formatFunc) {
-  var lastHref = null;
-  var lastAs = null;
-  var lastResult = null;
+  let lastHref = null;
+  let lastAs = null;
+  let lastResult = null;
   return (href, as) => {
     if (lastResult && href === lastHref && as === lastAs) {
       return lastResult;
     }
 
-    var result = formatFunc(href, as);
+    const result = formatFunc(href, as);
     lastHref = href;
     lastAs = as;
     lastResult = result;
@@ -1001,9 +965,9 @@ function formatUrl(url) {
   return url && typeof url === 'object' ? (0, _utils.formatWithValidation)(url) : url;
 }
 
-var observer;
-var listeners = new _map.default();
-var IntersectionObserver = false ? undefined : null;
+let observer;
+const listeners = new _map.default();
+const IntersectionObserver = false ? undefined : null;
 
 function getObserver() {
   // Return shared instance of IntersectionObserver if already created
@@ -1022,7 +986,7 @@ function getObserver() {
         return;
       }
 
-      var cb = listeners.get(entry.target);
+      const cb = listeners.get(entry.target);
 
       if (entry.isIntersecting || entry.intersectionRatio > 0) {
         observer.unobserve(entry.target);
@@ -1035,8 +999,8 @@ function getObserver() {
   });
 }
 
-var listenToIntersections = (el, cb) => {
-  var observer = getObserver();
+const listenToIntersections = (el, cb) => {
+  const observer = getObserver();
 
   if (!observer) {
     return () => {};
@@ -1071,7 +1035,7 @@ class Link extends _react.Component {
 
     this.linkClicked = e => {
       // @ts-ignore target exists on currentTarget
-      var {
+      const {
         nodeName,
         target
       } = e.currentTarget;
@@ -1081,7 +1045,7 @@ class Link extends _react.Component {
         return;
       }
 
-      var {
+      let {
         href,
         as
       } = this.formatUrls(this.props.href, this.props.as);
@@ -1091,14 +1055,14 @@ class Link extends _react.Component {
         return;
       }
 
-      var {
+      const {
         pathname
       } = window.location;
       href = (0, _url.resolve)(pathname, href);
       as = as ? (0, _url.resolve)(pathname, as) : href;
       e.preventDefault(); //  avoid scroll for urls with anchor refs
 
-      var {
+      let {
         scroll
       } = this.props;
 
@@ -1146,22 +1110,22 @@ class Link extends _react.Component {
   prefetch() {
     if (!this.p || true) return; // Prefetch the JSON page if asked (only in the client)
 
-    var {
+    const {
       pathname
     } = window.location;
-    var {
+    const {
       href: parsedHref
     } = this.formatUrls(this.props.href, this.props.as);
-    var href = (0, _url.resolve)(pathname, parsedHref);
+    const href = (0, _url.resolve)(pathname, parsedHref);
 
     _router.default.prefetch(href);
   }
 
   render() {
-    var {
+    let {
       children
     } = this.props;
-    var {
+    const {
       href,
       as
     } = this.formatUrls(this.props.href, this.props.as); // Deprecated. Warning shown by propType check. If the children provided is a string (<Link>example</Link>) we wrap it in an <a> tag
@@ -1171,9 +1135,9 @@ class Link extends _react.Component {
     } // This will return the first child, if multiple are provided it will throw an error
 
 
-    var child = _react.Children.only(children);
+    const child = _react.Children.only(children);
 
-    var props = {
+    const props = {
       ref: el => {
         this.handleRef(el);
 
@@ -1198,9 +1162,10 @@ class Link extends _react.Component {
         if (!e.defaultPrevented) {
           this.linkClicked(e);
         }
-      }
-    }; // If child is an <a> tag and doesn't have a href attribute, or if the 'passHref' property is
-    // defined, we specify the current 'href', so that repetition is not needed by the user
+      } // If child is an <a> tag and doesn't have a href attribute, or if the 'passHref' property is
+      // defined, we specify the current 'href', so that repetition is not needed by the user
+
+    };
 
     if (this.props.passHref || child.type === 'a' && !('href' in child.props)) {
       props.href = as || href;
@@ -1218,9 +1183,9 @@ class Link extends _react.Component {
 Link.propTypes = void 0;
 
 if (true) {
-  var warn = (0, _utils.execOnce)(console.error); // This module gets removed by webpack.IgnorePlugin
+  const warn = (0, _utils.execOnce)(console.error); // This module gets removed by webpack.IgnorePlugin
 
-  var exact = __webpack_require__(/*! prop-types-exact */ "prop-types-exact");
+  const exact = __webpack_require__(/*! prop-types-exact */ "prop-types-exact");
 
   Link.propTypes = exact({
     href: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.object]).isRequired,
@@ -1231,7 +1196,7 @@ if (true) {
     passHref: _propTypes.default.bool,
     scroll: _propTypes.default.bool,
     children: _propTypes.default.oneOfType([_propTypes.default.element, (props, propName) => {
-      var value = props[propName];
+      const value = props[propName];
 
       if (typeof value === 'string') {
         warn("Warning: You're using a string directly inside <Link>. This usage has been deprecated. Please add an <a> tag as child of <Link>");
@@ -1279,14 +1244,12 @@ exports.NextRouter = _router2.NextRouter;
 
 var _routerContext = __webpack_require__(/*! ../next-server/lib/router-context */ "./node_modules/next/dist/next-server/lib/router-context.js");
 
-exports.RouterContext = _routerContext.RouterContext;
-
 var _withRouter = _interopRequireDefault(__webpack_require__(/*! ./with-router */ "./node_modules/next/dist/client/with-router.js"));
 
 exports.withRouter = _withRouter.default;
 /* global window */
 
-var singletonRouter = {
+const singletonRouter = {
   router: null,
   // holds the actual router instance
   readyCallbacks: [],
@@ -1299,9 +1262,9 @@ var singletonRouter = {
 
 }; // Create public properties and methods of the router in the singletonRouter
 
-var urlPropertyFields = ['pathname', 'route', 'query', 'asPath', 'components'];
-var routerEvents = ['routeChangeStart', 'beforeHistoryChange', 'routeChangeComplete', 'routeChangeError', 'hashChangeStart', 'hashChangeComplete'];
-var coreMethodFields = ['push', 'replace', 'reload', 'back', 'prefetch', 'beforePopState']; // Events is a static property on the router, the router doesn't have to be initialized to use it
+const urlPropertyFields = ['pathname', 'route', 'query', 'asPath', 'components'];
+const routerEvents = ['routeChangeStart', 'beforeHistoryChange', 'routeChangeComplete', 'routeChangeError', 'hashChangeStart', 'hashChangeComplete'];
+const coreMethodFields = ['push', 'replace', 'reload', 'back', 'prefetch', 'beforePopState']; // Events is a static property on the router, the router doesn't have to be initialized to use it
 
 (0, _defineProperty.default)(singletonRouter, 'events', {
   get() {
@@ -1316,7 +1279,7 @@ urlPropertyFields.forEach(field => {
   // proper way to access it
   (0, _defineProperty.default)(singletonRouter, field, {
     get() {
-      var router = getRouter();
+      const router = getRouter();
       return router[field];
     }
 
@@ -1327,15 +1290,15 @@ coreMethodFields.forEach(field => {
   ;
 
   singletonRouter[field] = function () {
-    var router = getRouter();
+    const router = getRouter();
     return router[field](...arguments);
   };
 });
 routerEvents.forEach(event => {
   singletonRouter.ready(() => {
     _router2.default.events.on(event, function () {
-      var eventField = "on" + event.charAt(0).toUpperCase() + event.substring(1);
-      var _singletonRouter = singletonRouter;
+      const eventField = "on" + event.charAt(0).toUpperCase() + event.substring(1);
+      const _singletonRouter = singletonRouter;
 
       if (_singletonRouter[eventField]) {
         try {
@@ -1353,7 +1316,7 @@ routerEvents.forEach(event => {
 
 function getRouter() {
   if (!singletonRouter.router) {
-    var message = 'No router instance found.\n' + 'You should only use "next/router" inside the client side of your app.\n';
+    const message = 'No router instance found.\n' + 'You should only use "next/router" inside the client side of your app.\n';
     throw new Error(message);
   }
 
@@ -1375,7 +1338,7 @@ function useRouter() {
 // This should **not** use inside the server.
 
 
-var createRouter = function createRouter() {
+const createRouter = function createRouter() {
   for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
     args[_key] = arguments[_key];
   }
@@ -1390,10 +1353,10 @@ var createRouter = function createRouter() {
 exports.createRouter = createRouter;
 
 function makePublicRouterInstance(router) {
-  var _router = router;
-  var instance = {};
+  const _router = router;
+  const instance = {};
 
-  for (var property of urlPropertyFields) {
+  for (const property of urlPropertyFields) {
     if (typeof _router[property] === 'object') {
       instance[property] = (0, _extends2.default)({}, _router[property]); // makes sure query is not stateful
 
@@ -1434,7 +1397,7 @@ var _extends2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-co
 
 var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 
-var _router = __webpack_require__(/*! ./router */ "./node_modules/next/dist/client/router.js");
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "prop-types"));
 
 function withRouter(ComposedComponent) {
   class WithRouteWrapper extends _react.default.Component {
@@ -1445,7 +1408,7 @@ function withRouter(ComposedComponent) {
 
     render() {
       return _react.default.createElement(ComposedComponent, (0, _extends2.default)({
-        router: this.context
+        router: this.context.router
       }, this.props));
     }
 
@@ -1453,13 +1416,13 @@ function withRouter(ComposedComponent) {
 
   WithRouteWrapper.displayName = void 0;
   WithRouteWrapper.getInitialProps = void 0;
-  WithRouteWrapper.contextType = _router.RouterContext;
-  WithRouteWrapper.getInitialProps = ComposedComponent.getInitialProps // This is needed to allow checking for custom getInitialProps in _app
-  ;
-  WithRouteWrapper.origGetInitialProps = ComposedComponent.origGetInitialProps;
+  WithRouteWrapper.contextTypes = {
+    router: _propTypes.default.object
+  };
+  WithRouteWrapper.getInitialProps = ComposedComponent.getInitialProps;
 
   if (true) {
-    var name = ComposedComponent.displayName || ComposedComponent.name || 'Unknown';
+    const name = ComposedComponent.displayName || ComposedComponent.name || 'Unknown';
     WithRouteWrapper.displayName = "withRouter(" + name + ")";
   }
 
@@ -1858,12 +1821,7 @@ class Router {
         const routeMatch = route_matcher_1.getRouteMatcher(rr)(asPathname);
 
         if (!routeMatch) {
-          const error = 'The provided `as` value is incompatible with the `href` value. This is invalid. https://err.sh/zeit/next.js/incompatible-href-as';
-
-          if (true) {
-            throw new Error(error);
-          } else {}
-
+          console.error('The provided `as` value is incompatible with the `href` value. This is invalid. https://err.sh/zeit/next.js/incompatible-href-as');
           return resolve(false);
         } // Merge params into `query`, overwriting any specified in search
 
@@ -2159,24 +2117,31 @@ class Router {
 
     if ( // @ts-ignore workaround for dead-code elimination
     (self.__HAS_SPR || "development" !== 'production') && Component.__NEXT_SPR) {
-      let status; // pathname should have leading slash
-
-      let {
-        pathname
-      } = url_1.parse(ctx.asPath || ctx.pathname);
-      pathname = !pathname || pathname === '/' ? '/index' : pathname;
-      props = await fetch( // @ts-ignore __NEXT_DATA__
-      `/_next/data/${__NEXT_DATA__.buildId}${pathname}.json`).then(res => {
+      let status;
+      const url = ctx.asPath ? ctx.asPath : url_1.format({
+        pathname: ctx.pathname,
+        query: ctx.query
+      });
+      props = await fetch(url, {
+        headers: {
+          'content-type': 'application/json'
+        }
+      }).then(res => {
         if (!res.ok) {
           status = res.status;
           throw new Error('failed to load prerender data');
         }
 
         return res.json();
+      }).then(pageProps => {
+        return {
+          pageProps
+        };
       }).catch(err => {
-        console.error(`Failed to load data`, status, err);
-        window.location.href = pathname;
-        return new _Promise(() => {});
+        return {
+          error: err.message,
+          status
+        };
       });
     } else {
       const AppTree = this._wrapApp(App);
@@ -2429,7 +2394,7 @@ async function loadGetInitialProps(Component, ctx) {
 
   if (true) {
     if (_Object$keys(props).length === 0 && !ctx.ctx) {
-      console.warn(`${getDisplayName(Component)} returned an empty object from \`getInitialProps\`. This de-optimizes and prevents automatic static optimization. https://err.sh/zeit/next.js/empty-object-getInitialProps`);
+      console.warn(`${getDisplayName(Component)} returned an empty object from \`getInitialProps\`. This de-optimizes and prevents automatic prerendering. https://err.sh/zeit/next.js/empty-object-getInitialProps`);
     }
   }
 
@@ -2482,13 +2447,18 @@ var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/r
 
 var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "prop-types"));
+
 var _utils = __webpack_require__(/*! ../next-server/lib/utils */ "./node_modules/next/dist/next-server/lib/utils.js");
 
 exports.AppInitialProps = _utils.AppInitialProps;
+
+var _router = __webpack_require__(/*! ../client/router */ "./node_modules/next/dist/client/router.js");
 /**
 * `App` component is used for initialize of pages. It allows for overwriting and full control of the `page` initialization.
 * This allows for keeping state between navigation, custom error handling, injecting additional data.
 */
+
 
 function appGetInitialProps(_x) {
   return _appGetInitialProps.apply(this, arguments);
@@ -2496,11 +2466,11 @@ function appGetInitialProps(_x) {
 
 function _appGetInitialProps() {
   _appGetInitialProps = (0, _asyncToGenerator2.default)(function* (_ref) {
-    var {
+    let {
       Component,
       ctx
     } = _ref;
-    var pageProps = yield (0, _utils.loadGetInitialProps)(Component, ctx);
+    const pageProps = yield (0, _utils.loadGetInitialProps)(Component, ctx);
     return {
       pageProps
     };
@@ -2509,20 +2479,26 @@ function _appGetInitialProps() {
 }
 
 class App extends _react.default.Component {
-  // Kept here for backwards compatibility.
+  getChildContext() {
+    return {
+      router: (0, _router.makePublicRouterInstance)(this.props.router)
+    };
+  } // Kept here for backwards compatibility.
   // When someone ended App they could call `super.componentDidCatch`.
   // @deprecated This method is no longer needed. Errors are caught at the top level
+
+
   componentDidCatch(error, _errorInfo) {
     throw error;
   }
 
   render() {
-    var {
+    const {
       router,
       Component,
       pageProps
     } = this.props;
-    var url = createUrl(router);
+    const url = createUrl(router);
     return _react.default.createElement(Component, (0, _extends2.default)({}, pageProps, {
       url: url
     }));
@@ -2531,10 +2507,13 @@ class App extends _react.default.Component {
 }
 
 exports.default = App;
+App.childContextTypes = {
+  router: _propTypes.default.object
+};
 App.origGetInitialProps = appGetInitialProps;
 App.getInitialProps = appGetInitialProps;
-var warnContainer;
-var warnUrl;
+let warnContainer;
+let warnUrl;
 
 if (true) {
   warnContainer = (0, _utils.execOnce)(() => {
@@ -2553,7 +2532,7 @@ function Container(p) {
 
 function createUrl(router) {
   // This is to make sure we don't references the router object at call time
-  var {
+  const {
     pathname,
     asPath,
     query
@@ -2584,8 +2563,8 @@ function createUrl(router) {
     },
     pushTo: (href, as) => {
       if (true) warnUrl();
-      var pushRoute = as ? href : '';
-      var pushUrl = as || href;
+      const pushRoute = as ? href : '';
+      const pushUrl = as || href;
       return router.push(pushRoute, pushUrl);
     },
     replace: (url, as) => {
@@ -2594,8 +2573,8 @@ function createUrl(router) {
     },
     replaceTo: (href, as) => {
       if (true) warnUrl();
-      var replaceRoute = as ? href : '';
-      var replaceUrl = as || href;
+      const replaceRoute = as ? href : '';
+      const replaceUrl = as || href;
       return router.replace(replaceRoute, replaceUrl);
     }
   };
@@ -2750,17 +2729,6 @@ module.exports = require("core-js/library/fn/object/keys");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/promise");
-
-/***/ }),
-
-/***/ "core-js/library/fn/weak-map":
-/*!**********************************************!*\
-  !*** external "core-js/library/fn/weak-map" ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/library/fn/weak-map");
 
 /***/ }),
 

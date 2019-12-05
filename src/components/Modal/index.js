@@ -11,6 +11,7 @@ const ModalDiv = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
+  cursor: auto;
   z-index: 990;
   display: ${props => (props.open ? "block" : "none")};
   :close_modal {

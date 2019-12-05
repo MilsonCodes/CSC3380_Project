@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import { GiExpand } from "react-icons/gi";
+import { IoIosArrowForward } from "react-icons/io";
 import Modal from "../Modal";
 import { darken } from "polished";
+import LinkComp from "../Link/index.js";
 
 let Background = styled.div`
   background: ${p => p.theme.white};
@@ -35,11 +37,19 @@ const Image = styled.img`
   }
 `;
 
+let Div = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 let Buttons = styled.span`
   display: flex;
   width: 100%;
   flex-direction: row;
   justify-content: flex-end;
+  align-items: center;
   padding: auto;
   margin: auto;
   span {
@@ -78,17 +88,19 @@ const Card = props => {
   let fields = props.fields;
   const FullCard = () => {
     return (
-      <div>
+      <Div>
         <h2>{fields.title}</h2>
         <Image src={fields.image}></Image>
         <h4>{fields.description}</h4>
         <Buttons color='black'>
           <Fav></Fav>
-          <span>
-            <GiExpand></GiExpand>
-          </span>
+          <LinkComp to={"/restautants/:" + fields.owner}>
+            <p>
+              View Full Restaurant <IoIosArrowForward></IoIosArrowForward>
+            </p>
+          </LinkComp>
         </Buttons>
-      </div>
+      </Div>
     );
   };
   return (

@@ -9,14 +9,13 @@ import LinkComp from "../Link/index.js";
 
 let Background = styled.div`
   background: ${p => p.theme.white};
-  min-height: 250px;
-  max-height: 500px;
   min-width: 15%;
   max-width: 20%;
+  height: 22.5%;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
   border-radius: 30px;
   padding: 10px;
-  margin: auto;
+  margin: 1.5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -67,7 +66,7 @@ let Buttons = styled.span`
 `;
 
 const Card = props => {
-  const [favorited, toggleFav] = useState(props.favorite || false);
+  const [favorited, toggleFav] = useState(props.fields.favorite || false);
   let click = () => {
     toggleFav(!favorited);
   };
@@ -94,7 +93,7 @@ const Card = props => {
         <h4>{fields.description}</h4>
         <Buttons color='black'>
           <Fav></Fav>
-          <LinkComp to={"/restautants/:" + fields.owner}>
+          <LinkComp to={"/restaurants/:" + fields.owner}>
             <p>
               View Full Restaurant <IoIosArrowForward></IoIosArrowForward>
             </p>

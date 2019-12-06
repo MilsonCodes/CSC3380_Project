@@ -41,7 +41,7 @@ let ChevronRight = styled(FaChevronRight)`
 
 const Carousel = props => {
   let fields = props.specials;
-  const size = 5;
+  const size = props.size || 5;
 
   const [options, switchOptions] =
     fields.length > size

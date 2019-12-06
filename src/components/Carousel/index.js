@@ -54,7 +54,7 @@ const Carousel = props => {
       : React.useState({ data: fields, right: false, left: false, offset: 0 });
 
   let moveRight = () => {
-    let move = options.data.length + 2 * size > fields.length ? false : true;
+    let move = options.offset + size > fields.length ? false : true;
     switchOptions({
       data: fields.slice(options.offset, options.offset + size),
       right: move,
@@ -64,7 +64,7 @@ const Carousel = props => {
     console.log(options.right);
   };
   let moveLeft = () => {
-    let move = options.data.length - 2 * options.offset < 0 ? false : true;
+    let move = options.offset - 2 * size <= 0 ? false : true;
     switchOptions({
       data: fields.slice(options.offset - 2 * size, options.offset - size),
       right: true,

@@ -10,7 +10,7 @@ let Container = styled.span`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: auto;
   margin: 25px;
 `;
@@ -107,11 +107,11 @@ const Carousel = props => {
     <React.Fragment>
       <h2>{props.title}</h2>
       <Span>
+        <Left left={options.left}></Left>
         <Container>
-          <Left left={options.left}></Left>
           <Cards></Cards>
-          <Right right={options.right}></Right>
         </Container>
+        <Right right={options.right}></Right>
       </Span>
     </React.Fragment>
   );

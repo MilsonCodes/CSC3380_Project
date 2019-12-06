@@ -39,8 +39,11 @@ let ChevronRight = styled(FaChevronRight)`
   }
 `;
 
+// The carousel component takes an array of objects called "specials" that will be mapped to the carousel
+// It also takes an optional size prop to determine how many specials are displayed at a time
+// See pages/home.js to see how special objects are constructed
 const Carousel = props => {
-  let fields = props.specials;
+  const fields = props.specials;
   const size = props.size || 5;
 
   const [options, switchOptions] =

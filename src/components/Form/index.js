@@ -9,7 +9,6 @@ import LinkComp from "../Link";
 const Forms = {};
 const URL = "http://localhost:4040/api/";     //Likely to change this to a different location. For testing purposes only of course
 
-//TODO: Adjust div for form
 let FormDiv = styled.div`
   width: 25%;
   margin: 0 auto;
@@ -23,18 +22,22 @@ let Form = styled.form`
   }
 `;
 
-//TODO: Edit up this error bar that works :D
+let ErrorDiv = styled.div`
+padding: 20px;
+background-color: #f44336; /* Red */
+color: white;
+margin-bottom: 15px;
+border-radius: 25px;
+`;
+
 const ErrorBar = props => {
   return (
-    <label>{props.message}</label>
+    <ErrorDiv>
+      <strong>Error!</strong> {props.message}
+    </ErrorDiv>
   );
 }
 
-/**
- * TODO:
- *  - Adjust CSS
- *  - Validate and handle login data
- */
 Forms.LoginForm = props => {
   const [showPassword, setShowPassword] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(['login-token']);

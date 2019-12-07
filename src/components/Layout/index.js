@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Head from "next/head";
 import styled, { ThemeProvider } from "styled-components";
 import THEME from "../../assests/constants";
+import { Provider } from "react-redux";
+import store from "../../store.js";
 import { lighten } from "polished";
 import logo from "../../assests/AGIT_thumbnail.png";
 import Link from "next/link";
@@ -136,21 +138,27 @@ const Layout = props => {
         ></link>
         <title>Agit - Agile Eats</title>
       </Head>
-      <ThemeProvider theme={THEME}>
-        <Background className='Content'>
-          <Header>
-            <Link href='/home'>
-              <Image src={logo}></Image>
-            </Link>
-          </Header>
-          {props.children}
-          <Footer>
-            <Modal title='Bug Report' element={<BugReportForm />} color='black'>
-              Report an issue
-            </Modal>
-          </Footer>
-        </Background>
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={THEME}>
+          <Background className='Content'>
+            <Header>
+              <Link href='/home'>
+                <Image src={logo}></Image>
+              </Link>
+            </Header>
+            {props.children}
+            <Footer>
+              <Modal
+                title='Bug Report'
+                element={<BugReportForm />}
+                color='black'
+              >
+                Report an issue
+              </Modal>
+            </Footer>
+          </Background>
+        </ThemeProvider>
+      </Provider>
     </div>
   );
 };

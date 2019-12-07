@@ -1,10 +1,26 @@
-import LinkComp from '../components/Link';
-import Forms from '../components/Form';
+import Forms from "../components/Form";
+import { logIn, logOut, setName } from "../actions/user";
+import { connect } from "react-redux";
 
-const Register = () => (
-	<div>
-		<Forms.RegisterForm />
-	</div>
+const mapDispatchToProps = {
+  logIn,
+  logOut,
+  setName
+};
+
+const mapStateToProps = state => ({
+  loggedIn: state.user.loggedIn
+});
+
+const Register = (logIn, logOut, loggedIn) => (
+  <div>
+    <Forms.RegisterForm
+      onSubmit={e => {
+        logIn();
+        setName(e.target.value);
+      }}
+    />
+  </div>
 );
 
-export default Register;
+export default connect(mapStateToProps, mapDispatchToProps)(Register);

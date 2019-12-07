@@ -5,9 +5,10 @@ import Button from "../Button";
 import Input from "./input";
 import Checkbox from "./checkbox";
 import LinkComp from "../Link";
+import Router from "next/router";
 
 const Forms = {};
-const URL = "http://localhost:4040/api/";     //Likely to change this to a different location. For testing purposes only of course
+const URL = "http://localhost:4040/api/"; //Likely to change this to a different location. For testing purposes only of course
 
 let FormDiv = styled.div`
   width: 25%;
@@ -23,11 +24,11 @@ let Form = styled.form`
 `;
 
 let ErrorDiv = styled.div`
-padding: 20px;
-background-color: #f44336; /* Red */
-color: white;
-margin-bottom: 15px;
-border-radius: 25px;
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+  border-radius: 25px;
 `;
 
 const ErrorBar = props => {
@@ -36,11 +37,11 @@ const ErrorBar = props => {
       <strong>Error!</strong> {props.message}
     </ErrorDiv>
   );
-}
+};
 
 Forms.LoginForm = props => {
   const [showPassword, setShowPassword] = useState(false);
-  const [cookies, setCookie, removeCookie] = useCookies(['login-token']);
+  const [cookies, setCookie, removeCookie] = useCookies(["login-token"]);
   const [error, setError] = useState({ err: false, errMsg: "" });
 
   function handleSubmit(event) {
@@ -48,27 +49,33 @@ Forms.LoginForm = props => {
     const data = new FormData(event.target);
 
     fetch(`${URL}users/login`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
+        Accept: "application/json",
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(data)
-    }).then((res) => res.json())
-    .then((resJSON) => {
-      setCookie('login-token', resJSON.login_token, { path: '/' });
-
-      props.history.push('/home');
     })
-    .catch((err) => {
-      console.log(err);
-      setError(prevErr => ({ err: true, errMsg: (err.message ? err.message : "An unspecified error has been encountered!") }));       //Need routes working to test this
-    });
+      .then(res => res.json())
+      .then(resJSON => {
+        setCookie("login-token", resJSON.login_token, { path: "/" });
+
+        props.history.push("/home");
+      })
+      .catch(err => {
+        console.log(err);
+        setError(prevErr => ({
+          err: true,
+          errMsg: err.message
+            ? err.message
+            : "An unspecified error has been encountered!"
+        })); //Need routes working to test this
+      });
   }
 
   return (
     <FormDiv>
-      {(error.err ? <ErrorBar message={error.errMsg} /> : null)}
+      {error.err ? <ErrorBar message={error.errMsg} /> : null}
       <h2>Login</h2>
       <Form onSubmit={handleSubmit}>
         <Input type='text' name='username' placeholder='Username' />
@@ -109,7 +116,7 @@ Forms.RegisterForm = props => {
   const [mainPass, setMainPassword] = useState("");
   const [confPass, setConfirmPassword] = useState("");
   const [ownRestaurant, setOwnRestaurant] = useState(false);
-  const [cookies, setCookie, removeCookie] = useCookies(['login-token']);
+  const [cookies, setCookie, removeCookie] = useCookies(["login-token"]);
   const [error, setError] = useState({ err: false, errMsg: "" });
 
   const onPasswordChange = e => {
@@ -124,36 +131,43 @@ Forms.RegisterForm = props => {
     setPassCriteria(mainPass === confPass && mainPass.length >= 8);
   };
 
-  function handleSubmit(event) {
+  function handleSubmit(event, props) {
     event.preventDefault();
     const data = new FormData(event.target);
+    props.onSubmit(data.name);
+    Router.push("/home");
+    // if (emailCriteria && passCriteria) {
+    //   fetch(`${URL}/users`, {
+    //     method: "POST",
+    //     headers: {
+    //       Accept: "application/json",
+    //       "Content-Type": "application/json"
+    //     },
+    //     body: JSON.stringify(data)
+    //   })
+    //     .then(res => res.json())
+    //     .then(resJSON => {
+    //       setCookie("login-token", resJSON.login_token, { path: "/" });
 
-    if (emailCriteria && passCriteria) {
-      fetch(`${URL}/users`, {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      }).then((res) => res.json())
-      .then((resJSON) => {
-        setCookie('login-token', resJSON.login_token, { path: '/' });
-  
-        props.history.push('/home');
-      })
-      .catch((err) => {
-        console.log(err);
-        setError(prevErr => ({ err: true, errMsg: (err.message ? err.message : "An unspecified error has been encountered!") }));
-      });
-    }
+    //       props.history.push("/home");
+    //     })
+    //     .catch(err => {
+    //       console.log(err);
+    //       setError(prevErr => ({
+    //         err: true,
+    //         errMsg: err.message
+    //           ? err.message
+    //           : "An unspecified error has been encountered!"
+    //       }));
+    //     });
+    // }
   }
 
   return (
     <FormDiv>
-      {(error.err ? <ErrorBar message={error.errMsg} /> : null)}
+      {error.err ? <ErrorBar message={error.errMsg} /> : null}
       <h2>Register</h2>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} {...props}>
         <h3>Restaurant</h3>
         <Checkbox
           name='ownRestaurant'

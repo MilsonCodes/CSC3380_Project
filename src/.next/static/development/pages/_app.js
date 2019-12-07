@@ -470,7 +470,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  position: fixed;\n  transition: all 2s ease-in-out;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 990;\n  display: ", ";\n  :close_modal {\n    position: absolute;\n    right: 10px;\n    top: 10px;\n    cursor: pointer;\n    font-size: 18px;\n    opacity: 0.5;\n    background: none;\n    border: none;\n    transition: opacity 0.2s ease;\n  }\n  :close_modal:hover {\n    opacity: 0.9;\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  position: fixed;\n  transition: all 2s ease-in-out;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  cursor: auto;\n  z-index: 990;\n  display: ", ";\n  :close_modal {\n    position: absolute;\n    right: 10px;\n    top: 10px;\n    cursor: pointer;\n    font-size: 18px;\n    opacity: 0.5;\n    background: none;\n    border: none;\n    transition: opacity 0.2s ease;\n  }\n  :close_modal:hover {\n    opacity: 0.9;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -513,7 +513,7 @@ var Modal = function Modal(props) {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 90
     },
     __self: this
   }, __jsx(Text, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
@@ -522,7 +522,7 @@ var Modal = function Modal(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 91
     },
     __self: this
   }), props.children), __jsx(ModalDiv, {
@@ -530,7 +530,7 @@ var Modal = function Modal(props) {
     open: isOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 94
     },
     __self: this
   }, __jsx(Overlay, {
@@ -539,19 +539,19 @@ var Modal = function Modal(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 95
     },
     __self: this
   }), __jsx(Content, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 96
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 97
     },
     __self: this
   }, __jsx(_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -561,13 +561,13 @@ var Modal = function Modal(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 98
     },
     __self: this
   }, __jsx(react_icons_fi__WEBPACK_IMPORTED_MODULE_6__["FiX"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 99
     },
     __self: this
   }))), props.element)));

@@ -524,6 +524,7 @@ const ModalDiv = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
   top: 0;
   width: 100%;
   height: 100%;
+  cursor: auto;
   z-index: 990;
   display: ${props => props.open ? "block" : "none"};
   :close_modal {
@@ -588,14 +589,14 @@ const Modal = props => {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 90
     },
     __self: undefined
   }, __jsx(Text, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     onClick: () => setOpen(true),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 91
     },
     __self: undefined
   }), props.children), __jsx(ModalDiv, {
@@ -603,26 +604,26 @@ const Modal = props => {
     open: isOpen,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 94
     },
     __self: undefined
   }, __jsx(Overlay, {
     onClick: () => setOpen(false),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 95
     },
     __self: undefined
   }), __jsx(Content, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 96
     },
     __self: undefined
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 97
     },
     __self: undefined
   }, __jsx(_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -630,13 +631,13 @@ const Modal = props => {
     onClick: () => setOpen(false),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 98
     },
     __self: undefined
   }, __jsx(react_icons_fi__WEBPACK_IMPORTED_MODULE_4__["FiX"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 99
     },
     __self: undefined
   }))), props.element)));

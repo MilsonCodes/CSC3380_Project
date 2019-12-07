@@ -403,7 +403,7 @@ const Card = props => {
       },
       __self: undefined
     }), __jsx(_Link_index_js__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      to: "/restaurants/:" + fields.owner,
+      to: "/profile/:" + fields.owner,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 96

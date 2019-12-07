@@ -93,7 +93,7 @@ const Card = props => {
         <h4>{fields.description}</h4>
         <Buttons color='black'>
           <Fav></Fav>
-          <LinkComp to={"/restaurants/:" + fields.owner}>
+          <LinkComp to={"/profile/:" + fields.owner}>
             <p>
               View Full Restaurant <IoIosArrowForward></IoIosArrowForward>
             </p>

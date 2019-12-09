@@ -9,6 +9,7 @@ import logo from "../../assests/AGIT_thumbnail.png";
 import Link from "next/link";
 import Modal from "../Modal";
 import Button from "../Button";
+import Navbar from "../Navbar";
 
 const Background = styled.div`
   background-image: linear-gradient(
@@ -142,9 +143,10 @@ const Layout = props => {
         <ThemeProvider theme={THEME}>
           <Background className='Content'>
             <Header>
-              <Link href='/home'>
-                <Image src={logo}></Image>
-              </Link>
+              
+
+              <Navbar />
+
             </Header>
             {props.children}
             <Footer>

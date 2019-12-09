@@ -143,7 +143,9 @@ const Layout = props => {
         <ThemeProvider theme={THEME}>
           <Background className='Content'>
             <Header>
-              
+            <Link href='/home'>
+              <Image src={logo}></Image>
+            </Link>
 
               <Navbar />
 

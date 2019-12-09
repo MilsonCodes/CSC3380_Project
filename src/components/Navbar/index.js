@@ -14,17 +14,13 @@ const MyNavbar = styled.nav`
   align-items: center;
   z-index: 1;
   border: 2px solid #4dd0e1;
-  padding: 5px;
-  border-radius: 25px;
-
-  background-size: auto;
+  border-radius: 30px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+  padding: 10px;
+  margin: 1.5%;
   color: #f5f5f5;
-
-  height: 15vh;
-
-  box-shadow: 5px 10px #888888;
-
-
+  height: 5vh;
+  width: 30vw;
 
   .nav-links{
     display: flex;
@@ -37,49 +33,26 @@ const MyNavbar = styled.nav`
     list-style: none;
   }
 
-  .link{
-    color: white;
-    font-size: 2.5vh;
-    text-decoration: none;
-  }
-  `;
-
-  const Image = styled.img`
-    @media (max-width: 900px) {
-      width: 30%;
-      height: 25%;
-    }
-    @media (min-width: 900px) {
-      width: 10%;
-      height: 7.5%;
-    }
-    :hover {
-      cursor: pointer;
-    }
-  `;
+`;
 
 const Navbar = props => {
   return (
     <MyNavbar>
 
-    <Link href='/home'>
-      <Image src={logo}></Image>
-    </Link>
         <ul className="nav-links">
             <li>
-              <LinkComp to="/home" className="link">Home</LinkComp>
+              <LinkComp to="/home">Home</LinkComp>
             </li>
             <li>
-              <LinkComp to="about" className="link"> About </LinkComp>
+              <LinkComp to="about" > About </LinkComp>
             </li>
             <li>
-              <LinkComp to="contact" className="link">Contact</LinkComp>
+              <LinkComp to="contact" >Contact</LinkComp>
             </li>
             <li>
-              <LinkComp to="profile" className="link">Profile</LinkComp>
+              <LinkComp to="profile" >Profile</LinkComp>
             </li>
           </ul>
-
 
       </MyNavbar>
 );

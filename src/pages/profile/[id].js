@@ -19,6 +19,7 @@ const mapStateToProps = state => ({
 
 let Profile = ({ logIn, logOut, loggedIn, setName, user, name, ...props }) => {
   const [options, setOptions] = React.useState({});
+  const [image, setImage] = React.useState();
   const UpdateForm = () => {
     let Span = styled.span`
       background-color: "black";
@@ -64,18 +65,17 @@ let Profile = ({ logIn, logOut, loggedIn, setName, user, name, ...props }) => {
       let description = e.target[1].value;
       let start = e.target[2].value;
       let end = e.target[3].value;
-      let file = e.target[4].value;
+      let file = e.target[4].files[0];
       setOptions({
-        title: title,
-        image: file,
-        description: description,
-        startDate: start,
-        endDate: end,
+        title: title || options.title,
+        description: description || options.description,
+        image: options.image || URL.createObjectURL(file),
+        startDate: start || options.startDate,
+        endDate: end || options.endDate,
         owner: user.name,
         favorite: false
       });
     };
-
     return (
       <Span>
         <Form onSubmit={handleSubmit}>
@@ -128,20 +128,24 @@ let Profile = ({ logIn, logOut, loggedIn, setName, user, name, ...props }) => {
             <Input
               type='file'
               name='picture'
+              id='imgInp'
+              accept='image/*'
               //   value={options.image}
               placeholder='Add Image'
             />
           </React.Fragment>
           <span>
             <Button size='medium' type='submit'>
-              Publish
+              Preview
             </Button>
           </span>
-          <React.Fragment>
-            <label>Preview:</label>
-            <Card fields={options}></Card>
-          </React.Fragment>
+          {/* <React.Fragment>
+            <Card fields={options} image={image}></Card>
+          </React.Fragment> */}
         </Form>
+        <React.Fragment>
+          <Card fields={options} image={image}></Card>
+        </React.Fragment>
       </Span>
     );
   };

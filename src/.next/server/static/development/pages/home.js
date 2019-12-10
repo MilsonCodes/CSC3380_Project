@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -156,6 +156,39 @@ module.exports = "/_next/static/images/food4-5a638210cf7207e115aaa95933854088.jp
 /***/ (function(module, exports) {
 
 module.exports = "/_next/static/images/food5-fe4d9dc6a0937b597bdfa3ef3d672b0c.jpg";
+
+/***/ }),
+
+/***/ "./assests/food6.jpg":
+/*!***************************!*\
+  !*** ./assests/food6.jpg ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/food6-45fe861396a6a3f412f7f62f0935c19d.jpg";
+
+/***/ }),
+
+/***/ "./assests/food7.jpg":
+/*!***************************!*\
+  !*** ./assests/food7.jpg ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/food7-891c5783a2aa40e8e1518a420cf11123.jpg";
+
+/***/ }),
+
+/***/ "./assests/food8.jpg":
+/*!***************************!*\
+  !*** ./assests/food8.jpg ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/food8-0290a2d9fa067fd8abda826618a47212.jpg";
 
 /***/ }),
 
@@ -378,7 +411,8 @@ const Card = props => {
       },
       __self: undefined
     }, fields.title), __jsx(Image, {
-      src: fields.image,
+      src: fields.image || props.image,
+      id: "picture",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 92
@@ -2716,9 +2750,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assests_food4_jpg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assests_food4_jpg__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _assests_food5_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assests/food5.jpg */ "./assests/food5.jpg");
 /* harmony import */ var _assests_food5_jpg__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assests_food5_jpg__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _components_Carousel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Carousel */ "./components/Carousel/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _assests_food6_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../assests/food6.jpg */ "./assests/food6.jpg");
+/* harmony import */ var _assests_food6_jpg__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_assests_food6_jpg__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _assests_food7_jpg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../assests/food7.jpg */ "./assests/food7.jpg");
+/* harmony import */ var _assests_food7_jpg__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_assests_food7_jpg__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _assests_food8_jpg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../assests/food8.jpg */ "./assests/food8.jpg");
+/* harmony import */ var _assests_food8_jpg__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_assests_food8_jpg__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _components_Carousel__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Carousel */ "./components/Carousel/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_11__);
 var _jsxFileName = "/home/m/CSC3380_Project/src/pages/home.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -2730,9 +2770,12 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
+
+
  // import LinkComp from "../components/Link/index.js";
 
-let Div = styled_components__WEBPACK_IMPORTED_MODULE_8___default.a.div`
+let Div = styled_components__WEBPACK_IMPORTED_MODULE_11___default.a.div`
   height: 90%;
   width: 95%;
 `;
@@ -2741,24 +2784,24 @@ const Home = () => {
   return __jsx(Div, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 22
     },
     __self: undefined
-  }, __jsx(_components_Carousel__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, __jsx(_components_Carousel__WEBPACK_IMPORTED_MODULE_10__["default"], {
     specials: options1,
     title: "Favorites",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 23
     },
     __self: undefined
-  }), __jsx(_components_Carousel__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), __jsx(_components_Carousel__WEBPACK_IMPORTED_MODULE_10__["default"], {
     specials: options2,
     size: 4,
     title: "Nearby",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 24
     },
     __self: undefined
   }));
@@ -2780,22 +2823,22 @@ let special2 = {
   favorite: false
 };
 let special3 = {
-  title: "Drinks",
-  description: "Please Drink Responsibly",
+  title: "Veggies!",
+  description: "Healthy bowls of vegetables half-off!",
   image: _assests_food2_jpeg__WEBPACK_IMPORTED_MODULE_3___default.a,
   owner: 74,
   favorite: false
 };
 let special4 = {
-  title: "Drinks",
-  description: "Please Drink Responsibly",
+  title: "FISH!!!!",
+  description: "Salmon, nom nom nom!",
   image: _assests_food3_jpg__WEBPACK_IMPORTED_MODULE_4___default.a,
   owner: 74,
   favorite: false
 };
 let special5 = {
-  title: "Drinks",
-  description: "Please Drink Responsibly",
+  title: "Make your own food",
+  description: "Pay us to make your own food!",
   image: _assests_food4_jpg__WEBPACK_IMPORTED_MODULE_5___default.a,
   owner: 74,
   favorite: false
@@ -2808,23 +2851,23 @@ let special6 = {
   favorite: false
 };
 let special7 = {
-  title: "Drinks",
-  description: "Please Drink Responsibly",
-  image: _assests_food3_jpg__WEBPACK_IMPORTED_MODULE_4___default.a,
+  title: "Pizza BOGO",
+  description: "Buy one get one free!",
+  image: _assests_food6_jpg__WEBPACK_IMPORTED_MODULE_7___default.a,
   owner: 74,
   favorite: true
 };
 let special8 = {
-  title: "Drinks",
-  description: "Please Drink Responsibly",
-  image: _assests_food4_jpg__WEBPACK_IMPORTED_MODULE_5___default.a,
+  title: "Week old sushi!",
+  description: "We'll pay you to eat it... First you sign a waiver.",
+  image: _assests_food7_jpg__WEBPACK_IMPORTED_MODULE_8___default.a,
   owner: 74,
   favorite: true
 };
 let special9 = {
-  title: "Drinks",
+  title: "Half price local brews",
   description: "Please Drink Responsibly",
-  image: _assests_food5_jpg__WEBPACK_IMPORTED_MODULE_6___default.a,
+  image: _assests_food8_jpg__WEBPACK_IMPORTED_MODULE_9___default.a,
   owner: 74,
   favorite: true
 };
@@ -2833,7 +2876,7 @@ let options1 = [special7, special8, special9];
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!*****************************!*\
   !*** multi ./pages/home.js ***!
   \*****************************/

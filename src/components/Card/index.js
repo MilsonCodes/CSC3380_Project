@@ -89,7 +89,7 @@ const Card = props => {
     return (
       <Div>
         <h2>{fields.title}</h2>
-        <Image src={fields.image}></Image>
+        <Image src={fields.image || props.image} id='picture'></Image>
         <h4>{fields.description}</h4>
         <span>
           <h5>Starts: {fields.startDate || "NOW"}</h5>

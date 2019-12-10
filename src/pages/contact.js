@@ -1,40 +1,42 @@
 import React, { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { lighten } from "polished";
-import LinkComp from "../components/Link/index.js";
 import Button from "../components/Button";
 
-
 let Div = styled.div`
-
-  max-width: 420px;
-`
-let P = styled.p `
-    text-align: center;
-    font-weight: 500;
+  div {
+    width: 50%;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+let P = styled.p`
+  text-align: center;
+  font-weight: 500;
 `;
 
 let Input = styled.input`
-width: 95%;
-border-radius: 30px;
-border: none;
-box-shadow: 0 0 10px 0 ${p => lighten(0.2, p.theme.secondary)};
-min-height: ${p => p.height};
-background-color: ${p => p.color};
-margin: 5px;
-padding: 5px;
-outline: none;
-transition: all ease 0.5s;
-font-family: "Montserrat", sans-serif;
-&::placeholder {
+  width: 95%;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 0 0 10px 0 ${p => lighten(0.2, p.theme.secondary)};
+  min-height: ${p => p.height};
+  background-color: ${p => p.color};
+  margin: 5px;
+  padding: 5px;
+  outline: none;
+  transition: all ease 0.5s;
+  font-family: "Montserrat", sans-serif;
+  &::placeholder {
     opacity: 0.4;
     input:focus ~ &,
     &.filled {
-        display: none;
+      display: none;
     }
-}
+  }
 `;
-let InputSubmit = styled.input `
+let InputSubmit = styled.input`
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
@@ -43,56 +45,69 @@ let InputSubmit = styled.input `
     cursor: pointer;
     :hover:background-color: #45a049;
 
-`
-let TextArea = styled.textarea`
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-`
+`;
+let TextArea = styled.input`
+  width: 100%;
+  border-radius: 30px;
+  border: none;
+  height: 150px;
+  box-shadow: 0 0 10px 0 ${p => lighten(0.2, p.theme.secondary)};
+  padding: 12px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+`;
 // .container {
 //     border-radius: 5px;
 //     background-color: #f2f2f2;
 //     padding: 20px;
 // }
 
-
 const Contact = () => {
   const [showMessageSent, setShowMessageSent] = useState(false);
-  return(
-    <Div >
-    <P>Contact Us</P>
-    <div>
+  return (
+    <Div>
+      <div>
+        <P>Contact Us</P>
+        <label>First Name</label>
+        <Input
+          type='text'
+          id='fname'
+          name='firstname'
+          placeholder='Your name..'
+        />
+        <label>Last Name</label>
+        <Input
+          type='text'
+          id='lname'
+          name='lastname'
+          placeholder='Your last name..'
+        />
 
-    <label>First Name</label>
-    <Input type="text" id="fname" name="firstname" placeholder="Your name.." />
-    <label>Last Name</label>
-    <Input type="text" id="lname" name="lastname" placeholder="Your last name.." />
+        <label>Email</label>
+        <Input type='email' id='email' name='email' placeholder='Your email' />
 
+        <label>Subject</label>
+        <TextArea
+          id='subject'
+          name='subject'
+          placeholder='Write something..'
+        ></TextArea>
 
-    <label>Email</label>
-    <Input type="email" id="email" name="email" placeholder="Your email" />
-
-
-    <label>Subject</label>
-    <TextArea id="subject" name="subject" placeholder="Write something.."></TextArea>
-
-
-    <Button size='medium' type='submit' onClick={() => setShowMessageSent( !showMessageSent )}>
-      Submit
-    </Button>
-    <div>
-      { showMessageSent &&
-        <div> Thank you for contacting us. We'll be in touch shortly. </div>
-      }
-    </div>
-
-
-    </div>
+        <Button
+          size='medium'
+          type='submit'
+          onClick={() => setShowMessageSent(!showMessageSent)}
+        >
+          Submit
+        </Button>
+        <div>
+          {showMessageSent && (
+            <div> Thank you for contacting us. We'll be in touch shortly. </div>
+          )}
+        </div>
+      </div>
     </Div>
   );
 };

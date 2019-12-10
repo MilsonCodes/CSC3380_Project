@@ -1,5 +1,4 @@
 import React from "react";
-import LinkComp from "../components/Link/index.js";
 import styled from "styled-components";
 import { transparentize } from "polished";
 
@@ -39,7 +38,6 @@ const Container = styled.div`
   border: none;
   border-radius: 50px;
   transition: all ease-in-out 1s;
-  ${"" /* height: 70%; */}
 `;
 
 const Divider = styled.div`

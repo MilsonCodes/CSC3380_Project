@@ -77,7 +77,7 @@ const Text = styled.div`
 `;
 
 const Modal = props => {
-  const [isOpen, setOpen] = React.useState(false);
+  const [isOpen, setOpen] = React.useState(props.init || false);
   if (process.browser) {
     document.addEventListener("keyup", function(e) {
       // closes on escape key

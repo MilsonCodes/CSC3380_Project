@@ -43,7 +43,7 @@ let Div = styled.div`
   align-items: center;
 `;
 
-let Buttons = styled.span`
+export const Buttons = styled.span`
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -91,9 +91,13 @@ const Card = props => {
         <h2>{fields.title}</h2>
         <Image src={fields.image}></Image>
         <h4>{fields.description}</h4>
+        <span>
+          <h5>Starts: {fields.startDate || "NOW"}</h5>
+          <h5>Ends: {fields.endDate || "N/A"}</h5>
+        </span>
         <Buttons color='black'>
           <Fav></Fav>
-          <LinkComp to={"/profile/:" + fields.owner}>
+          <LinkComp to={"/profile/" + fields.owner}>
             <p>
               View Full Restaurant <IoIosArrowForward></IoIosArrowForward>
             </p>

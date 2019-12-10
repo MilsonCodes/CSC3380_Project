@@ -16,8 +16,9 @@ const Register = (logIn, logOut, loggedIn) => (
   <div>
     <Forms.RegisterForm
       onSubmit={e => {
+        console.log(e);
         logIn();
-        setName(e.target.value);
+        setName(e.username.value);
       }}
     />
   </div>

@@ -131,11 +131,11 @@ Forms.RegisterForm = props => {
     setPassCriteria(mainPass === confPass && mainPass.length >= 8);
   };
 
-  function handleSubmit(event, props) {
+  let handleSubmit = (event, props) => {
     event.preventDefault();
     const data = new FormData(event.target);
-    props.onSubmit(data.name);
-    Router.push("/home");
+    props.onSubmit(data);
+    // Router.push("/home");
     // if (emailCriteria && passCriteria) {
     //   fetch(`${URL}/users`, {
     //     method: "POST",
@@ -161,7 +161,7 @@ Forms.RegisterForm = props => {
     //       }));
     //     });
     // }
-  }
+  };
 
   return (
     <FormDiv>

@@ -1,16 +1,11 @@
-import React from 'react';
-import styled from 'styled-components'
-import LinkComp from '../Link'
-import Link from "next/link";
-import logo from "../../assests/AGIT_thumbnail.png";
-
-
-//position: fixed
+import React from "react";
+import styled from "styled-components";
+import LinkComp from "../Link";
 
 const MyNavbar = styled.nav`
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   z-index: 1;
   border: 2px solid #4dd0e1;
@@ -18,44 +13,39 @@ const MyNavbar = styled.nav`
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
   padding: 10px;
   margin: 1.5%;
-  color: #f5f5f5;
+  background-color: ${p => p.theme.white || "#f5f5f5"};
   height: 5vh;
-  width: 30vw;
-
-  .nav-links{
+  width: 45%;
+  .nav-links {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-
     width: 35vw;
-
     list-style: none;
+    padding: 10px;
   }
-
 `;
 
 const Navbar = props => {
   return (
     <MyNavbar>
-
-        <ul className="nav-links">
-            <li>
-              <LinkComp to="/home">Home</LinkComp>
-            </li>
-            <li>
-              <LinkComp to="about" > About </LinkComp>
-            </li>
-            <li>
-              <LinkComp to="contact" >Contact</LinkComp>
-            </li>
-            <li>
-              <LinkComp to="profile" >Profile</LinkComp>
-            </li>
-          </ul>
-
-      </MyNavbar>
-);
+      <ul className='nav-links'>
+        <li>
+          <LinkComp to='/home'>Home</LinkComp>
+        </li>
+        <li>
+          <LinkComp to='/about'> About </LinkComp>
+        </li>
+        <li>
+          <LinkComp to='/contact'>Contact</LinkComp>
+        </li>
+        <li>
+          <LinkComp to={"/profile/" + props.id || "1"}>Profile</LinkComp>
+        </li>
+      </ul>
+    </MyNavbar>
+  );
 };
 
 export default Navbar;

@@ -13,6 +13,8 @@ let Container = styled.span`
   justify-content: center;
   padding: auto;
   margin: 25px;
+  ${"" /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16); */}
+  border-radius: 50px;
 `;
 
 let Span = styled.span`
@@ -78,7 +80,7 @@ const Carousel = props => {
 
   let Cards = () => {
     return options.data.map(option => (
-      <React.Fragment>
+      <React.Fragment key={option.title}>
         <Card fields={option}></Card>
       </React.Fragment>
     ));

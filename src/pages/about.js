@@ -11,7 +11,7 @@ const Welcome = styled.h2`
 
 const Descr = styled.p`
   color: ${p => p.theme.text | "#616161"};
-  padding-top: 10px;
+  padding: 10px;
 `;
 
 const Head = styled.h3`
@@ -39,7 +39,7 @@ const Container = styled.div`
   border: none;
   border-radius: 50px;
   transition: all ease-in-out 1s;
-  height: 70%;
+  ${"" /* height: 70%; */}
 `;
 
 const Divider = styled.div`
@@ -55,46 +55,50 @@ const Break = styled.div`
 `;
 
 const Header = () => {
-    return <Welcome>About Us</Welcome>
-}
+  return <Welcome>About Us</Welcome>;
+};
 
 const Description = () => {
-    return (
-        <React.Fragment>
-            <Head>What is Agit?</Head>
-            <Descr>
-                Agit is a service that allows customers and businesses to connect.
-                <br />
-                Using Agit, businesses have a place to share information, specials, and deals to customers.
-                <br />
-                Customers will be able to discover what businesses have to offer for them. 
-            </Descr>
-            <Break />
-            <Head>How Much Does it Cost to Use Agit?</Head>
-            <Descr>
-                For both customers and businesses, Agit is 100% free to use.
-            </Descr>
-            <Break />
-            <Head>How Do I Get Started?</Head>
-            <Descr>
-                It's simple!
-                <br />
-                Both customers and businesses can go and register <a href='/register'>here</a>.
-                <br />
-                For customers who are not interested in registering and just browsing, click <a href='/home'>here</a>.
-            </Descr>
-        </React.Fragment>
-    );
-}
+  return (
+    <React.Fragment>
+      <Head>What is Agit?</Head>
+      <Descr>
+        Agit is a service that allows customers and businesses to connect.
+        <br />
+        Using Agit, businesses have a place to share information, specials, and
+        deals to customers.
+        <br />
+        Customers will be able to discover what businesses have to offer for
+        them.
+      </Descr>
+      <Break />
+      <Head>How Much Does it Cost to Use Agit?</Head>
+      <Descr>
+        For both customers and businesses, Agit is 100% free to use.
+      </Descr>
+      <Break />
+      <Head>How Do I Get Started?</Head>
+      <Descr>
+        It's simple!
+        <br />
+        Both customers and businesses can go and register{" "}
+        <a href='/register'>here</a>.
+        <br />
+        For customers who are not interested in registering and just browsing,
+        click <a href='/home'>here</a>.
+      </Descr>
+    </React.Fragment>
+  );
+};
 
 const About = () => {
-    return (
-        <Container>
-            <Header />
-            <Break />
-            <Description />
-        </Container>
-    );
-}
+  return (
+    <Container>
+      <Header />
+      <Break />
+      <Description />
+    </Container>
+  );
+};
 
 export default About;

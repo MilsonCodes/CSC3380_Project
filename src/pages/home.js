@@ -5,6 +5,9 @@ import food2 from "../assests/food2.jpeg";
 import food3 from "../assests/food3.jpg";
 import food4 from "../assests/food4.jpg";
 import food5 from "../assests/food5.jpg";
+import food6 from "../assests/food6.jpg";
+import food7 from "../assests/food7.jpg";
+import food8 from "../assests/food8.jpg";
 import Carousel from "../components/Carousel";
 import styled from "styled-components";
 // import LinkComp from "../components/Link/index.js";
@@ -42,24 +45,24 @@ let special2 = {
 };
 
 let special3 = {
-  title: "Drinks",
-  description: "Please Drink Responsibly",
+  title: "Veggies!",
+  description: "Healthy bowls of vegetables half-off!",
   image: food2,
   owner: 74,
   favorite: false
 };
 
 let special4 = {
-  title: "Drinks",
-  description: "Please Drink Responsibly",
+  title: "FISH!!!!",
+  description: "Salmon, nom nom nom!",
   image: food3,
   owner: 74,
   favorite: false
 };
 
 let special5 = {
-  title: "Drinks",
-  description: "Please Drink Responsibly",
+  title: "Make your own food",
+  description: "Pay us to make your own food!",
   image: food4,
   owner: 74,
   favorite: false
@@ -74,25 +77,25 @@ let special6 = {
 };
 
 let special7 = {
-  title: "Drinks",
-  description: "Please Drink Responsibly",
-  image: food3,
+  title: "Pizza BOGO",
+  description: "Buy one get one free!",
+  image: food6,
   owner: 74,
   favorite: true
 };
 
 let special8 = {
-  title: "Drinks",
-  description: "Please Drink Responsibly",
-  image: food4,
+  title: "Week old sushi!",
+  description: "We'll pay you to eat it... First you sign a waiver.",
+  image: food7,
   owner: 74,
   favorite: true
 };
 
 let special9 = {
-  title: "Drinks",
+  title: "Half price local brews",
   description: "Please Drink Responsibly",
-  image: food5,
+  image: food8,
   owner: 74,
   favorite: true
 };

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -242,11 +242,12 @@ Button.propTypes = {
 /*!**********************************!*\
   !*** ./components/Card/index.js ***!
   \**********************************/
-/*! exports provided: default */
+/*! exports provided: Buttons, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Buttons", function() { return Buttons; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
@@ -304,7 +305,7 @@ let Div = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
   justify-content: center;
   align-items: center;
 `;
-let Buttons = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.span`
+const Buttons = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.span`
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -389,36 +390,54 @@ const Card = props => {
         lineNumber: 93
       },
       __self: undefined
-    }, fields.description), __jsx(Buttons, {
-      color: "black",
+    }, fields.description), __jsx("span", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 94
       },
       __self: undefined
-    }, __jsx(Fav, {
+    }, __jsx("h5", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 95
       },
       __self: undefined
-    }), __jsx(_Link_index_js__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      to: "/profile/:" + fields.owner,
+    }, "Starts: ", fields.startDate || "NOW"), __jsx("h5", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 96
       },
       __self: undefined
+    }, "Ends: ", fields.endDate || "N/A")), __jsx(Buttons, {
+      color: "black",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 98
+      },
+      __self: undefined
+    }, __jsx(Fav, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 99
+      },
+      __self: undefined
+    }), __jsx(_Link_index_js__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      to: "/profile/" + fields.owner,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 100
+      },
+      __self: undefined
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 97
+        lineNumber: 101
       },
       __self: undefined
     }, "View Full Restaurant ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_4__["IoIosArrowForward"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 98
+        lineNumber: 102
       },
       __self: undefined
     })))));
@@ -427,45 +446,45 @@ const Card = props => {
   return __jsx(Background, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 110
     },
     __self: undefined
   }, __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 111
     },
     __self: undefined
   }, fields.title), __jsx(Image, {
     src: fields.image,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 112
     },
     __self: undefined
   }), __jsx("h4", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 113
     },
     __self: undefined
   }, fields.description), __jsx(Buttons, {
     color: "black",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 114
     },
     __self: undefined
   }, __jsx(Fav, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
+      lineNumber: 115
     },
     __self: undefined
   }), __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 116
     },
     __self: undefined
   }, __jsx(_Modal__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -473,20 +492,20 @@ const Card = props => {
       fields: fields,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 113
+        lineNumber: 117
       },
       __self: undefined
     }),
     color: "black",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 117
     },
     __self: undefined
   }, __jsx(react_icons_gi__WEBPACK_IMPORTED_MODULE_3__["GiExpand"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114
+      lineNumber: 118
     },
     __self: undefined
   })))));
@@ -532,6 +551,10 @@ let Container = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.span`
   justify-content: center;
   padding: auto;
   margin: 25px;
+  ${""
+/* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16); */
+}
+  border-radius: 50px;
 `;
 let Span = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.span`
   display: flex;
@@ -595,16 +618,17 @@ const Carousel = props => {
 
   let Cards = () => {
     return options.data.map(option => __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
+      key: option.title,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81
+        lineNumber: 83
       },
       __self: undefined
     }, __jsx(_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
       fields: option,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 82
+        lineNumber: 84
       },
       __self: undefined
     })));
@@ -615,25 +639,25 @@ const Carousel = props => {
       onClick: moveLeft,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89
+        lineNumber: 91
       },
       __self: undefined
     }, __jsx(ChevronLeft, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90
+        lineNumber: 92
       },
       __self: undefined
     }))) : __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93
+        lineNumber: 95
       },
       __self: undefined
     }, __jsx(ChevronLeft, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 94
+        lineNumber: 96
       },
       __self: undefined
     })));
@@ -644,25 +668,25 @@ const Carousel = props => {
       onClick: moveRight,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 100
+        lineNumber: 102
       },
       __self: undefined
     }, __jsx(ChevronRight, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 101
+        lineNumber: 103
       },
       __self: undefined
     }))) : __jsx("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 104
+        lineNumber: 106
       },
       __self: undefined
     }, __jsx(ChevronRight, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 105
+        lineNumber: 107
       },
       __self: undefined
     })));
@@ -671,45 +695,45 @@ const Carousel = props => {
   return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 112
     },
     __self: undefined
   }, __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
+      lineNumber: 113
     },
     __self: undefined
   }, props.title), __jsx(Span, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 114
     },
     __self: undefined
   }, __jsx(Left, {
     left: options.left,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 115
     },
     __self: undefined
   }), __jsx(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114
+      lineNumber: 116
     },
     __self: undefined
   }, __jsx(Cards, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115
+      lineNumber: 117
     },
     __self: undefined
   })), __jsx(Right, {
     right: options.right,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 119
     },
     __self: undefined
   })));
@@ -875,7 +899,7 @@ const Text = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
 `;
 
 const Modal = props => {
-  const [isOpen, setOpen] = react__WEBPACK_IMPORTED_MODULE_1___default.a.useState(false);
+  const [isOpen, setOpen] = react__WEBPACK_IMPORTED_MODULE_1___default.a.useState(props.init || false);
 
   if (false) {}
 
@@ -2809,7 +2833,7 @@ let options1 = [special7, special8, special9];
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!*****************************!*\
   !*** multi ./pages/home.js ***!
   \*****************************/

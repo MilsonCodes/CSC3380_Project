@@ -1,5 +1,5 @@
 import { cookies } from "../api";
-import { LOGGED_IN, LOGGED_OUT, USER, RESTAURANT } from "./types";
+import { LOGGED_IN, LOGGED_OUT, USER, RESTAURANT, EDIT } from "./types";
 
 // Action creators
 export const logIn = () => ({
@@ -7,9 +7,13 @@ export const logIn = () => ({
   loggedIn: true
 });
 
-export const setName = name => ({
-  name: name
-});
+export function setName(name) {
+  cookies.set("name", name, { maxAge: 1.814e3 });
+  return {
+    type: EDIT,
+    name: name
+  };
+}
 
 export function logOut() {
   cookies.remove("loggedIn");

@@ -1,11 +1,20 @@
-import { LOGGED_OUT, LOGGED_IN, USER, RESTAURANT } from "../actions/types";
+import {
+  LOGGED_OUT,
+  LOGGED_IN,
+  USER,
+  RESTAURANT,
+  EDIT
+} from "../actions/types";
 import { cookies } from "../api";
 
 export const user = (
   state = {
-    loggedIn: false,
+    loggedIn: true,
     portal: cookies.get("portal"),
-    name: null
+    name: cookies.get("name") || "LSU",
+    password: null,
+    restaurant: true,
+    favorites: []
   },
   action
 ) => {
@@ -27,6 +36,11 @@ export const user = (
       return {
         ...state,
         portal: RESTAURANT
+      };
+    case EDIT:
+      return {
+        ...state,
+        name: action.name
       };
     default:
       return state;

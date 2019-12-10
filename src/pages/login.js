@@ -8,8 +8,7 @@ const mapDispatchToProps = {
 };
 
 const mapStateToProps = state => ({
-  loggedIn: state.user.loggedIn,
-  routeAfterLogin: state.routeAfterLogin
+  loggedIn: state.user.loggedIn
 });
 
 const Login = (logIn, logOut, loggedIn) => (

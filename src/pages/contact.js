@@ -65,7 +65,7 @@ const Contact = () => {
   const [showMessageSent, setShowMessageSent] = useState(false);
   return(
     <Div >
-    <P>Contact Me</P>
+    <P>Contact Us</P>
     <div>
 
     <label>First Name</label>
@@ -82,12 +82,12 @@ const Contact = () => {
     <TextArea id="subject" name="subject" placeholder="Write something.."></TextArea>
 
 
-    <Button size='medium' type='submit' onClick={() => setShowMessageSent( !state.showMessageSent )}>
+    <Button size='medium' type='submit' onClick={() => setShowMessageSent( !showMessageSent )}>
       Submit
     </Button>
     <div>
-      { state.showMessageSent &&
-        <div>Thank you for contcting us.</div>
+      { showMessageSent &&
+        <div> Thank you for contacting us. We'll be in touch shortly. </div>
       }
     </div>
 
